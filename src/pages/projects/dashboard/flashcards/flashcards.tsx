@@ -7,6 +7,8 @@ import { flashcardState } from "src/recoil/flashcards";
 import { ChevronLeft, ChevronRight } from "src/common/icons";
 import { mediaQuery } from "src/common/styles/media";
 import { Input } from "src/common/ui-elements";
+import { FlashcardInputs } from "./form";
+
 
 interface FlashcardsProps { };
 
@@ -65,20 +67,17 @@ export const Flashcards: FC<FlashcardsProps> = () => {
           shouldHide={index === cards.length - 1}
         />
       </CardWrapper>
-      <div style={{
-        display: "flex",
-        justifyContent: "center",
-        margin: "2rem 0"
-      }}>
-        <Input
-        />
-        <Input
-          
-        />
-      </div>
+      <InputWrapper>
+       <FlashcardInputs />
+      </InputWrapper>
     </Section>
   )
 }
+
+const InputWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const CardWrapper = styled.div`
   display: flex;
