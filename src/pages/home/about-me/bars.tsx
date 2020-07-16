@@ -1,6 +1,6 @@
-import React, { FC, useState, useEffect, useRef } from "react";
-import { animated, useSpring, useChain } from "react-spring";
-import styled, { keyframes } from "styled-components";
+import React, { FC, useState, useEffect } from "react";
+import { animated, useSpring } from "react-spring";
+import styled from "styled-components";
 import { Colors } from "src/common/styles/colors";
 import { ContentBlurb, BlurbType } from "./content-blurb";
 import { Section } from "src/common/layout";
@@ -17,9 +17,13 @@ export const Bars: FC<BarsProps> = ({
   // change to a useSprings or useChain implementation
   // This will clean up a lot of this component
   const [{ y1 }, set1] = useSpring<{ y1: number }>(() => ({ y1: 0 }));
-  const [{ y2 }, set2] = useSpring<{ y2: number }>(() => ({ y2: 0 }));
-  const [{ y3 }, set3] = useSpring<{ y3: number }>(() => ({ y3: 0 }));
+  const [{ dash1 }, setDash1] = useSpring<{ dash1: number }>(() => ({ dash1: 130 }));
 
+  const [{ y2 }, set2] = useSpring<{ y2: number }>(() => ({ y2: 0 }));
+  const [{ dash2 }, setDash2] = useSpring<{ dash2: number }>(() => ({ dash2: 130 }));
+
+  const [{ y3 }, set3] = useSpring<{ y3: number }>(() => ({ y3: 0 }));
+  const [{ dash3 }, setDash3] = useSpring<{ dash3: number }>(() => ({ dash3: 130 }));
 
   const [blurb, setBlurb] = useState<BlurbType>("about");
   const [hovered, setHovered] = useState<{ id: BlurbType | null, active: boolean }>({
@@ -27,23 +31,9 @@ export const Bars: FC<BarsProps> = ({
     active: false
   });
 
-  const springRef1 = useRef(null);
-  const spring1 = useSpring({
-    ref: springRef1,
-    from: { height: "0rem", bottom: "0rem" },
-    to: { height: "2.5rem", bottom: "-2.5rem" },
-  });
-  const springRef2 = useRef(null);
-  const spring2 = useSpring({
-    ref: springRef2,
-    from: { height: "2.5rem", bottom: "-2.5rem", width: "0rem", right: "0rem" },
-    to: { height: "2.5rem", bottom: "-2.5rem", width: "50rem", right: "-50rem" },
-  });
-
-  useChain(hovered.active ? [springRef1, springRef2] : [springRef2, springRef1]);
 
   useEffect(() => {
-    const timer = hovered.active ? setTimeout(onTimeout, 300) : 0;
+    const timer = hovered.active ? setTimeout(onTimeout, 200) : 0;
     return () => {
       clearTimeout(timer);
     };
@@ -78,90 +68,70 @@ export const Bars: FC<BarsProps> = ({
           <Bar1
             onMouseEnter={() => {
               set1({ y1: 5 });
-              onMouseEnterHandler("education");
+              setDash1({ dash1: 0 });
+              onMouseEnterHandler("career");
             }}
             onMouseLeave={() => {
               set1({ y1: 0 });
+              setDash1({ dash1: 130 });
               onMouseLeaveHandler();
             }}
             style={{ transform: y1.interpolate(v => `translateY(${v}%`) }}
           >
             <VerticalWord>
-              Education
-              {/**
-               * Warrants explanation:
-               *  I use the percentage provided by react-spring during the translate
-               *  to make the height of the progress bar appear, and use that same
-               *  percentage to use as an offset
-                */}
-              <VerticalProgressLine style={{ ...spring1 }} />
-              <HorizontalProgressLine style={{ ...spring2 }} />
-              {/* <VerticalProgressLine
-                style={{
-                  height: y1.interpolate(v => `${(v * 0.5).toPrecision(3)}rem`),
-                  bottom: y1.interpolate(v => `-${(v * 0.5) + 0.8}rem`)
-                }}
-              />
-              <HorizontalProgressLine
-                style={{
-                  width: y1.interpolate(v => `${(v * 15).toPrecision(3)}rem`),
-                  right: y1.interpolate(v => `-${(v * 15)}rem`)
-                }}
-              /> */}
+              Career
+              <ProgressLine>
+                <Line
+                  points="3 0, 3 40, 1000 40"
+                  style={{ strokeDashoffset: dash1.interpolate(v => `${v}rem`) }}
+                />
+              </ProgressLine>
             </VerticalWord>
           </Bar1>
           <Bar2
             onMouseEnter={() => {
               set2({ y2: 5 });
-              onMouseEnterHandler("about");
+              setDash2({ dash2: 0 });
+              onMouseEnterHandler("education");
             }}
             onMouseLeave={() => {
               set2({ y2: 0 });
+              setDash2({ dash2: 130 });
               onMouseLeaveHandler();
             }}
             style={{ transform: y2.interpolate(v => `translateY(${v}%`) }}
           >
             <VerticalWord>
-              About
-              <VerticalProgressLine
-                style={{
-                  height: y2.interpolate(v => `${(v * 0.5).toPrecision(3)}rem`),
-                  bottom: y2.interpolate(v => `-${(v * 0.5) + 0.8}rem`)
-                }}
-              />
-              <HorizontalProgressLine
-                style={{
-                  width: y2.interpolate(v => `${(v * 14).toPrecision(3)}rem`),
-                  right: y2.interpolate(v => `-${(v * 14)}rem`)
-                }}
-              />
+              Education
+              <ProgressLine>
+                <Line
+                  points="3 0, 3 30, 1000 30"
+                  style={{ strokeDashoffset: dash2.interpolate(v => `${v}rem`) }}
+                />
+              </ProgressLine>
             </VerticalWord>
           </Bar2>
           <Bar3
             onMouseEnter={() => {
               set3({ y3: 5 });
+              setDash3({ dash3: 0 });
               onMouseEnterHandler("about");
             }}
             onMouseLeave={() => {
               set3({ y3: 0 });
+              setDash3({ dash3: 130 });
               onMouseLeaveHandler();
             }}
             style={{ transform: y3.interpolate(v => `translateY(${v}%`) }}
           >
             <VerticalWord>
               About
-              <VerticalProgressLine
-                style={{
-                  height: y3.interpolate(v => `${(v * 0.5).toPrecision(3)}rem`),
-                  bottom: y3.interpolate(v => `-${(v * 0.5) + 0.8}rem`)
-                }}
-              />
-              <HorizontalProgressLine
-                style={{
-                  width: y3.interpolate(v => `${(v * 13).toPrecision(3)}rem`),
-                  right: y3.interpolate(v => `-${(v * 13)}rem`)
-                }}
-              />
+              <ProgressLine>
+                <Line
+                  points="3 0, 3 20, 1000 20"
+                  style={{ strokeDashoffset: dash3.interpolate(v => `${v}rem`) }}
+                />
+              </ProgressLine>
             </VerticalWord>
           </Bar3>
         </BarWrapper>
@@ -177,13 +147,14 @@ const StyledSection = styled(Section)``;
 const Wrapper = styled.div`
   ${mediaQuery.tablet} {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 `;
 
 const BarWrapper = styled.div`
   display: flex;
   margin-bottom: 7rem;
+  margin-left: 20rem;
 
   & > div:first-child {
     margin-top: -2rem;
@@ -202,13 +173,30 @@ const BarWrapper = styled.div`
   }
 `;
 
+const ProgressLine = styled.svg`
+  position: absolute;
+  bottom: -16rem;
+  left: 1.2rem;
+  width: 80rem;
+  pointer-events: none;
+`;
+
+const Line = styled(animated.polyline)`
+  stroke-width: 3px;
+  stroke: ${Colors.Light_Teal};
+  fill: none;
+  stroke-dasharray: 130rem;
+`;
+
 const Bar = styled(animated.div)`
-  background-color: ${Colors.Blue};
+  background-color: ${Colors.Orange};
   height: 30rem;
   width: 3rem;
   display: flex;
   margin-right: 4rem;
   border-radius: 0.2rem;
+  position: relative;
+  cursor: pointer;
 
 
   ${mediaQuery.tablet} {
@@ -216,9 +204,27 @@ const Bar = styled(animated.div)`
   }
 `;
 
-const Bar1 = styled(Bar)``;
-const Bar2 = styled(Bar)``;
-const Bar3 = styled(Bar)``;
+const Bar1 = styled(Bar)`
+  /* &:hover {
+    ${Line} {
+      animation-play-state: running;
+    }
+  } */
+`;
+const Bar2 = styled(Bar)`
+  &:hover {
+    ${Line} {
+      animation-play-state: running;
+    }
+  }
+`;
+const Bar3 = styled(Bar)`
+  &:hover {
+    ${Line} {
+      animation-play-state: running;
+    }
+  }
+`;
 
 const VerticalWord = styled.span`
   writing-mode: vertical-rl;
@@ -231,17 +237,3 @@ const VerticalWord = styled.span`
   font-size: 1.8rem;
 `;
 
-const VerticalProgressLine = styled(animated.div)`
-  border-left: 3px solid ${Colors.Light_Gray};
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-`;
-
-
-const HorizontalProgressLine = styled(animated.div)`
-  border-bottom: 3px solid ${Colors.Light_Gray};
-  position: absolute;
-  bottom: -3.3rem;
-  left: 1.5rem;
-`;

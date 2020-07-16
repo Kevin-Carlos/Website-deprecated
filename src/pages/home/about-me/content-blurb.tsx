@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Colors } from "src/common/styles/colors";
 import graduationPic from "src/common/assets/graduation.jpeg";
 
@@ -7,7 +7,7 @@ interface ContentBlurbProps {
   type: BlurbType;
 };
 
-export type BlurbType = "about" | "education";
+export type BlurbType = "about" | "education" | "career";
 
 export const ContentBlurb: FC<ContentBlurbProps> = ({
   type,
@@ -15,28 +15,61 @@ export const ContentBlurb: FC<ContentBlurbProps> = ({
   return (
     <ContentWrapper>
       <Content>
+
+        {type === "career" && (
+          <CareerBackground>
+            <Description style={{ marginBottom: "1rem" }}>
+              I joined the guys at{" "}
+              <CycleLink href={`https://cycle.io`} target="_#">
+                Cycle.io
+              </CycleLink> back in October of 2019 as the 4th member. Since joining, my task
+              has been to constantly learn/adapt to new challenges to create an amazing product that people
+              want to use.
+            </Description>
+            <div>
+              <Description>
+                I've learned: React, Redux & Redux Sagas, Gatsby, interacting with API's, the fundamentals and importance
+                of functional programming, Bash scripting, containers, and much more through this journey.
+              </Description>
+            </div>
+          </CareerBackground>
+        )}
+
         {type === "education" && (
           <Education>
-            {/* <Img src={graduationPic} /> */}
-            <p>
-              I graduated from the University of Nevada, Reno in the winter of 2019.
-            </p>
-            <div>
-              Degree:
+            <Img src={graduationPic} />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <div>
+                Degree:
                 <TabbedDescription>
-                Bachelors Degree in Computer Science and Engineering
+                  Bachelors in Computer Science and Engineering
                 </TabbedDescription>
                 <TabbedDescription>
-                Minor in Mathematics
+                  Minor in Mathematics
                 </TabbedDescription>
+              </div>
+              <WavyDescription>
+                I graduated from the University of Nevada, Reno in the winter of 2019.
+                My coursework and area of interest was in Machine Learning and A.I. For my
+                Senior project, I worked as part of a team of three on a production-ready 
+                web application built using modern technologies.
+              </WavyDescription>
             </div>
           </Education>
         )}
+
         {type === "about" && (
           <div>
             Grew up in Reno, etc etc.
           </div>
         )}
+
       </Content>
     </ContentWrapper>
   )
@@ -45,22 +78,26 @@ export const ContentBlurb: FC<ContentBlurbProps> = ({
 const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
+  flex-grow: 1;
   margin: 2rem 0;
 `;
 
 const Content = styled.div`
   padding: 2rem;
   position: relative;
+  width: 100%;
 
   /* To eliminate content moving around */
-  width: 40rem;
-  height: 20rem;
+  min-width: 40rem;
+  min-height: 20rem;
+  max-width: 80rem;
+  max-height: 20rem;
 `;
 
 const Education = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-evenly;
   height: 100%;
 `;
 
@@ -70,25 +107,23 @@ const TabbedDescription = styled.p`
 
 const Img = styled.img`
   max-width: 20rem;
+  margin-right: 2rem;
 `;
 
-const draw = keyframes`
-  to {
-    stroke-dashoffset: 0;
-  }
+const CareerBackground = styled.div`
+  padding: 2rem;
+  border-radius: 0.2rem;
+  background-color: ${Colors.Black};
 `;
 
-const Test1 = styled.svg`
-  transform: rotateX(180deg);
+const CycleLink = styled.a`
+  color: ${Colors.Blue};
 `;
 
-const Test = styled.polyline`
-  stroke-dasharray: 1250;
-  stroke-dashoffset: 1250;
-  animation: ${draw} 1.5s linear forwards;
-  animation-play-state: paused;
+const Description = styled.p`
+  color: ${Colors.White};
+`;
 
-  ${TabbedDescription}:hover {
-    animation-play-state: running;
-  }
+const WavyDescription = styled.p`
+  width: 75%;
 `;

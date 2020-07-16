@@ -18,5 +18,5 @@ export const Hero: FC<HeroProps> = ({ className }) => {
 
 const Background = styled.div`
   height: 100%;
-  background-color: ${Colors.Gray};
+  background-color: ${Colors.Dark_Teal};
 `;

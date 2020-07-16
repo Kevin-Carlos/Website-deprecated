@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "src/common/styles/colors";
 import { menuItems } from "./nav-items";
-import { LinkButton } from "src/common/button/link-button";
+import { LinkButton } from "src/common/ui-elements/button/link-button";
 import darklogo from "src/common/assets/logo-dark.png";
 import { links } from "src/common/links";
 

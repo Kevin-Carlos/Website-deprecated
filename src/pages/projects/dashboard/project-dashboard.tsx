@@ -3,6 +3,7 @@ import { Section } from "src/common/layout";
 import styled from "styled-components";
 import { Colors } from "src/common/styles/colors";
 import { projectItems } from "./project-items";
+import { mediaQuery } from "src/common/styles/media";
 
 interface ProjectDashboardProps { };
 
@@ -28,17 +29,22 @@ export const ProjectDashboard: FC<ProjectDashboardProps> = () => {
   )
 }
 
-const HeaderWrapper = styled.div`
-  margin: 0 auto;
-`;
+const HeaderWrapper = styled.div``;
 
 const Grid = styled.div`
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  justify-self: center;
+
+  ${mediaQuery.laptop} {
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+  }
 `;
 
-const CardLink = styled.a``;
+const CardLink = styled.a`
+  color: ${Colors.Gray};
+`;
 
 const Card = styled.div`
   box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);

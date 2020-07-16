@@ -7,7 +7,13 @@ interface FooterProps {
 }
 
 export const Footer: FC<FooterProps> = ({ className }) => {
-  return <FooterWrapper className={className}></FooterWrapper>;
+  return (
+    <FooterWrapper className={className}>
+      <div>
+        Something here
+      </div>
+    </FooterWrapper>
+  );
 };
 
 const FooterWrapper = styled.footer`

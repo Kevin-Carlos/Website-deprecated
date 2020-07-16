@@ -12,10 +12,14 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.7rem;
   }
 
+  html, body {
+    height: 100%;
+  }
+
   a {
     font-size: 1.5rem;
     text-decoration: none;
-    color: ${Colors.Gray};
+    color: ${Colors.Blue};
   }
 
   h1 {
@@ -33,5 +37,11 @@ export const GlobalStyle = createGlobalStyle`
 
   p {
     margin: 0;
+    line-height: 2.5rem;
+  }
+
+  input {
+    font-family: inherit;
+    font-size: inherit;
   }
 `;

@@ -16,9 +16,11 @@ export const MenuLayout: FC<MenuLayoutProps> = ({ children }) => {
 };
 
 // ! TODO fix the calc below
-const GridLayout = styled.div`
+const GridLayout = styled.article`
   display: grid;
-  grid-template-rows: 4rem 100% 4rem;
+  grid-template-rows: 4rem 1fr 4rem;
+  grid-template-columns: 100%;
+  min-height: 100vh;
   grid-template-areas:
     "header header header"
     "content content content"
@@ -38,7 +40,6 @@ const GridHeader = styled(Header)`
 
 const GridFooter = styled(Footer)`
   grid-area: footer;
-  height: 4rem;
 `;
 
 const GridContent = styled.main`
