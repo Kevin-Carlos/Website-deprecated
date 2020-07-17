@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import styled from "styled-components";
 
 interface LabelProps {
   className?: string;
@@ -11,11 +12,17 @@ export const Label: FC<LabelProps> = ({
   children,
 }) => {
   return (
-    <div style={{ margin: "0 1rem" }}>
-      <label className={className}>
+    <LabelWrapper className={className}>
+      <label style={{ width: "100%" }}>
         {label}
-        <div>{children}</div>
+        {children}
       </label>
-    </div>
+    </LabelWrapper>
   )
 }
+
+const LabelWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+`;

@@ -40,8 +40,12 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 2.5rem;
   }
 
-  input {
+  input, button {
     font-family: inherit;
     font-size: inherit;
+  }
+
+  *, *::after, *::before {
+    box-sizing: border-box;
   }
 `;

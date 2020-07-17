@@ -4,7 +4,7 @@ import { Section } from "src/common/layout";
 import styled from "styled-components";
 import { Colors } from "src/common/styles/colors";
 import { flashcardState } from "src/recoil/flashcards";
-import { ChevronLeft, ChevronRight } from "src/common/icons";
+import { ChevronLeft, ChevronRight } from "src/common/ui-elements/icons";
 import { mediaQuery } from "src/common/styles/media";
 import { Input } from "src/common/ui-elements";
 import { FlashcardInputs } from "./form";
@@ -20,7 +20,8 @@ export const Flashcards: FC<FlashcardsProps> = () => {
     idx: index,
     side: "front",
   });
-  const [cards, setCards] = Recoil.useRecoilState(flashcardState);
+  const cards = Recoil.useRecoilValue(flashcardState);
+  const updateIndex = (v: number) => setIndex(v);
 
   return (
     <Section>
@@ -49,9 +50,12 @@ export const Flashcards: FC<FlashcardsProps> = () => {
           side={sideOfCard.side}
         >
           <p style={{ userSelect: "none" }}>
-            {sideOfCard.side === "front"
-              ? cards[index].subject
-              : cards[index].description
+            {cards.length ?
+              sideOfCard.side === "front"
+                ? cards[index].subject
+                : cards[index].description
+            : 
+              []
             }
           </p>
         </Flashcard>
@@ -64,11 +68,14 @@ export const Flashcards: FC<FlashcardsProps> = () => {
 
             setIndex(index + 1);
           }}
-          shouldHide={index === cards.length - 1}
+          shouldHide={index === cards.length - 1 || !cards.length}
         />
       </CardWrapper>
       <InputWrapper>
-       <FlashcardInputs />
+        <FlashcardInputs
+          cardIndex={index}
+          setIndex={updateIndex}
+        />
       </InputWrapper>
     </Section>
   )
@@ -137,7 +144,7 @@ const Flashcard = styled.div<{ side: CardSide }>`
     `};
 `;
 
-const StyledChevronRight = styled(ChevronRight)<{ shouldHide: boolean }>`
+const StyledChevronRight = styled(ChevronRight) <{ shouldHide: boolean }>`
   ${({ shouldHide }) => shouldHide && `
     opacity: 0;
     pointer-events: none;
@@ -145,7 +152,7 @@ const StyledChevronRight = styled(ChevronRight)<{ shouldHide: boolean }>`
   `};
 `;
 
-const StyledChevronLeft = styled(ChevronLeft)<{ shouldHide: boolean }>`
+const StyledChevronLeft = styled(ChevronLeft) <{ shouldHide: boolean }>`
   ${({ shouldHide }) => shouldHide && `
     opacity: 0;
     pointer-events: none;

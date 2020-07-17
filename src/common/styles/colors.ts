@@ -8,3 +8,5 @@ export const Colors = {
   Light_Teal: `rgb(57, 153, 142)`,
   Dark_Teal: `rgb(43, 77, 89)`,
 };
+
+export type ColorNames = keyof typeof Colors;
