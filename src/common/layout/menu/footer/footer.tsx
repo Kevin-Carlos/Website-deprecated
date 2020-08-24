@@ -17,7 +17,8 @@ export const Footer: FC<FooterProps> = ({ className }) => {
 };
 
 const FooterWrapper = styled.footer`
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   background-color: ${Colors.Black};
+  height: 4rem;
 `;

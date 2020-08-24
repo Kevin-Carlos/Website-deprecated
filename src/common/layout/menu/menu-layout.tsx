@@ -3,28 +3,26 @@ import styled from "styled-components";
 import { Header } from "./header";
 import { Footer } from "./footer";
 
-interface MenuLayoutProps {}
+interface MenuLayoutProps { }
 
 export const MenuLayout: FC<MenuLayoutProps> = ({ children }) => {
   return (
     <GridLayout>
       <GridHeader />
       <GridContent>{children}</GridContent>
-      <GridFooter />
+      {/* <GridFooter /> */}
     </GridLayout>
   );
 };
 
-// ! TODO fix the calc below
 const GridLayout = styled.article`
   display: grid;
-  grid-template-rows: 4rem 1fr 4rem;
-  grid-template-columns: 100%;
-  min-height: 100vh;
+  grid-template-rows: 6rem 1fr;
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "header header header"
-    "content content content"
-    "footer footer footer";
+    "header"
+    "content"
+    "footer";
 `;
 
 const GridHeader = styled(Header)`
@@ -40,8 +38,10 @@ const GridHeader = styled(Header)`
 
 const GridFooter = styled(Footer)`
   grid-area: footer;
+  align-self: end;
 `;
 
 const GridContent = styled.main`
   grid-area: content;
+  min-height: 100%;
 `;

@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "src/common/styles/colors";
+import heroSvg from "src/common/assets/hero.svg";
+import { Section } from "src/common/layout";
 
 interface HeroProps {
   className?: string;
@@ -8,15 +10,22 @@ interface HeroProps {
 
 export const Hero: FC<HeroProps> = ({ className }) => {
   return (
-    <section style={{ height: "20rem" }} className={className}>
-      <Background>
-        <h1 style={{ marginTop: 0 }}>Yellow everybody</h1>
+    <StyledSection className={className}>
+      <Background src={heroSvg}>
+        <HeroHeader>Hi, Everyone</HeroHeader>
       </Background>
-    </section>
+    </StyledSection>
   )
 }
 
-const Background = styled.div`
-  height: 100%;
-  background-color: ${Colors.Dark_Teal};
+const StyledSection = styled.section``;
+
+const HeroHeader = styled.h1`
+  margin: 0;
+`;
+
+const Background = styled.div<{ src: string }>`
+  padding: 5rem;
+  background-image: ${({ src }) => `url(${src})`};
+  background-size: cover;
 `;

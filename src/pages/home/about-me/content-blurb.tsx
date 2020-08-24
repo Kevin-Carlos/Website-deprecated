@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { Colors } from "src/common/styles/colors";
 import graduationPic from "src/common/assets/graduation.jpeg";
+import { transparentize } from "polished";
 
 interface ContentBlurbProps {
   type: BlurbType;
@@ -42,7 +43,7 @@ export const ContentBlurb: FC<ContentBlurbProps> = ({
               style={{
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "space-between",
+                justifyContent: "space-evenly",
               }}
             >
               <div>
@@ -54,19 +55,33 @@ export const ContentBlurb: FC<ContentBlurbProps> = ({
                   Minor in Mathematics
                 </TabbedDescription>
               </div>
-              <WavyDescription>
+
+              <div style={{
+                display: "flex",
+                justifyContent: "center",
+              }}>
+                <HR />
+              </div>
+
+              <p>
                 I graduated from the University of Nevada, Reno in the winter of 2019.
                 My coursework and area of interest was in Machine Learning and A.I. For my
-                Senior project, I worked as part of a team of three on a production-ready 
+                Senior project, I worked as part of a team of three on a production-ready
                 web application built using modern technologies.
-              </WavyDescription>
+              </p>
             </div>
           </Education>
         )}
 
         {type === "about" && (
           <div>
-            Grew up in Reno, etc etc.
+            <h3>About Me</h3>
+            <p>
+              I was born and raised in Reno, Nevada. I got into games from an early age from
+              a neighbor friend who showed me Halo. From then on I had an interest in games and computers;
+              Like everyone, I got into Computer Science to make games, but in doing so, found a world of
+              much more.
+            </p>
           </div>
         )}
 
@@ -124,6 +139,13 @@ const Description = styled.p`
   color: ${Colors.White};
 `;
 
-const WavyDescription = styled.p`
-  width: 75%;
+
+const HR = styled.div`
+  width: 100%;
+  height: 2px;
+  background: radial-gradient(
+    circle,
+    ${Colors.Orange} 0%,
+    ${transparentize(1, Colors.Light_Gray)} 100%
+  );
 `;

@@ -4,15 +4,21 @@ import { Colors } from "./colors";
 export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%; /* To make 1rem === 10px for easy calculation */
+    height: 100%;
   }
 
-  body {
-    margin: 0;
+  body { 
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 1.7rem;
+    min-height: 100%;
   }
 
   html, body {
+    margin: 0;
+  }
+
+  #root {
+    min-height: 100vh;
     height: 100%;
   }
 

@@ -17,13 +17,13 @@ export const Bars: FC<BarsProps> = ({
   // change to a useSprings or useChain implementation
   // This will clean up a lot of this component
   const [{ y1 }, set1] = useSpring<{ y1: number }>(() => ({ y1: 0 }));
-  const [{ dash1 }, setDash1] = useSpring<{ dash1: number }>(() => ({ dash1: 130 }));
+  const [{ dash1 }, setDash1] = useSpring<{ dash1: number }>(() => ({ dash1: 200 }));
 
   const [{ y2 }, set2] = useSpring<{ y2: number }>(() => ({ y2: 0 }));
-  const [{ dash2 }, setDash2] = useSpring<{ dash2: number }>(() => ({ dash2: 130 }));
+  // const [{ dash2 }, setDash2] = useSpring<{ dash2: number }>(() => ({ dash2: 200 }));
 
   const [{ y3 }, set3] = useSpring<{ y3: number }>(() => ({ y3: 0 }));
-  const [{ dash3 }, setDash3] = useSpring<{ dash3: number }>(() => ({ dash3: 130 }));
+  // const [{ dash3 }, setDash3] = useSpring<{ dash3: number }>(() => ({ dash3: 200 }));
 
   const [blurb, setBlurb] = useState<BlurbType>("about");
   const [hovered, setHovered] = useState<{ id: BlurbType | null, active: boolean }>({
@@ -73,7 +73,7 @@ export const Bars: FC<BarsProps> = ({
             }}
             onMouseLeave={() => {
               set1({ y1: 0 });
-              setDash1({ dash1: 130 });
+              setDash1({ dash1: 200 });
               onMouseLeaveHandler();
             }}
             style={{ transform: y1.interpolate(v => `translateY(${v}%`) }}
@@ -81,8 +81,12 @@ export const Bars: FC<BarsProps> = ({
             <VerticalWord>
               Career
               <ProgressLine>
-                <Line
+                {/* <Line
                   points="3 0, 3 40, 1000 40"
+                  style={{ strokeDashoffset: dash1.interpolate(v => `${v}rem`) }}
+                /> */}
+                <Line
+                  points="3 190, 3 200, 500 200, 500 150, 900 150, 200 150"
                   style={{ strokeDashoffset: dash1.interpolate(v => `${v}rem`) }}
                 />
               </ProgressLine>
@@ -91,47 +95,47 @@ export const Bars: FC<BarsProps> = ({
           <Bar2
             onMouseEnter={() => {
               set2({ y2: 5 });
-              setDash2({ dash2: 0 });
+              // setDash2({ dash2: 0 });
               onMouseEnterHandler("education");
             }}
             onMouseLeave={() => {
               set2({ y2: 0 });
-              setDash2({ dash2: 130 });
+              // setDash2({ dash2: 200 });
               onMouseLeaveHandler();
             }}
             style={{ transform: y2.interpolate(v => `translateY(${v}%`) }}
           >
             <VerticalWord>
               Education
-              <ProgressLine>
+              {/* <ProgressLine>
                 <Line
-                  points="3 0, 3 30, 1000 30"
-                  style={{ strokeDashoffset: dash2.interpolate(v => `${v}rem`) }}
+                  points="3 190, 3 200, 500 200, 500 150, 900 150, 200 150"
+                  // style={{ strokeDashoffset: dash2.interpolate(v => `${v}rem`) }}
                 />
-              </ProgressLine>
+              </ProgressLine> */}
             </VerticalWord>
           </Bar2>
           <Bar3
             onMouseEnter={() => {
               set3({ y3: 5 });
-              setDash3({ dash3: 0 });
+              // setDash3({ dash3: 0 });
               onMouseEnterHandler("about");
             }}
             onMouseLeave={() => {
               set3({ y3: 0 });
-              setDash3({ dash3: 130 });
+              // setDash3({ dash3: 200 });
               onMouseLeaveHandler();
             }}
             style={{ transform: y3.interpolate(v => `translateY(${v}%`) }}
           >
             <VerticalWord>
               About
-              <ProgressLine>
+              {/* <ProgressLine>
                 <Line
-                  points="3 0, 3 20, 1000 20"
-                  style={{ strokeDashoffset: dash3.interpolate(v => `${v}rem`) }}
+                  points="3 190, 3 200, 500 200, 500 150, 900 150, 200 150"
+                  // style={{ strokeDashoffset: dash3.interpolate(v => `${v}rem`) }}
                 />
-              </ProgressLine>
+              </ProgressLine> */}
             </VerticalWord>
           </Bar3>
         </BarWrapper>
@@ -178,6 +182,7 @@ const ProgressLine = styled.svg`
   bottom: -16rem;
   left: 1.2rem;
   width: 80rem;
+  height: 35rem;
   pointer-events: none;
 `;
 
@@ -185,7 +190,7 @@ const Line = styled(animated.polyline)`
   stroke-width: 3px;
   stroke: ${Colors.Light_Teal};
   fill: none;
-  stroke-dasharray: 130rem;
+  stroke-dasharray: 200rem;
 `;
 
 const Bar = styled(animated.div)`

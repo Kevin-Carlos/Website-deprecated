@@ -10,23 +10,40 @@ export const LinkButton: FC<LinkButtonProps> = ({
 }) => {
   return (
     <StyledA {...props}>
+      <Underline />
       {children}
     </StyledA>
   )
 }
 
+const Underline = styled.hr`
+  color: ${Colors.Orange};
+  border-width: 0px;
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 0;
+  transition: all 0.2s ease-in-out;
+`;
+
 const StyledA = styled.a`
   text-decoration: none;
   display: inline-block;
-  color: ${Colors.Black};
+  color: ${Colors.White};
   transition: all 0.2s ease-in-out;
+  position: relative;
 
   &:visited {
-    color: ${Colors.Black};
+    color: ${Colors.White};
   }
   
   &:hover {
     color: ${Colors.White};
-    transform: scale3d(1.2, 1.2, 1);
+    transform: scale(1.2);
+
+    ${Underline} {
+      border-width: 1px;
+      width: 2rem;
+    };
   }
 `;
