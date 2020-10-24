@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { RecoilRoot } from "recoil";
 import { App } from "./pages";
 import { ThemeProvider } from "styled-components";
+import "normalize.css";
 import { theme } from "common/styles";
 import { GlobalStyle } from "common/styles/global";
 

@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
 import { MenuLayoutRoute } from "common/routes";
-// import { HomePage } from "./home";
+import { Homepage } from "./home";
 // import { ProjectsSection } from "./projects";
-// import { links } from "common/links";
+import { links } from "common/links";
 
 type AppProps = {};
 
@@ -17,9 +17,8 @@ const App: FC<AppProps> = () => {
     <BrowserRouter>
       <Switch>
 
-        <MenuLayoutRoute exact path={"/"}>
-          {/* <HomePage /> */}
-          <div>Hello World</div>
+        <MenuLayoutRoute exact path={links.home()}>
+          <Homepage />
         </MenuLayoutRoute>
 
         {/* <MenuLayoutRoute path={links.projects().root()}>

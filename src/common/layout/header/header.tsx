@@ -1,14 +1,13 @@
 import React, { FC, useState, useRef } from "react";
 import styled from "styled-components";
 import { menuItems } from "./nav-items";
-// import { LinkButton } from "src/common/ui-elements/button/link-button";
 import darkLogo from "common/assets/images/logo-dark.png";
 import { transparentize } from "polished";
 import { links } from "common/links";
-// import { LinkButton } from "common/ui-elements";
-// import { HamburgerIcon } from "./hamburger-icon";
-// import { HamburgerMenu } from "./hamburger-menu";
+import { HamburgerIcon } from "./hamburger-icon";
+import { HamburgerMenu } from "./hamburger-menu";
 import { useClickOutside } from "common/hooks";
+import { LinkButton } from "common/ui-elements/buttons";
 
 
 interface HeaderProps {
@@ -32,22 +31,20 @@ export const Header: FC<HeaderProps> = ({ className }) => {
         </LogoWrapper>
         <Nav>
           {menuItems.map(i => (
-            <>
-            {/* <LinkButton href={i.path} key={i.name}> */}
+            <LinkButton href={i.path} key={i.name}>
               {i.name}
-            {/* </LinkButton> */}
-            </>
+            </LinkButton>
           ))}
         </Nav>
         <HamburgerMenuWrapper ref={menuRef}>
-          {/* <HamburgerIcon
+          <HamburgerIcon
             isOpen={mobileNav}
             setIsOpen={toggleMobileNav}
           />
           <HamburgerMenu
             isOpen={mobileNav}
             setIsOpen={toggleMobileNav}
-          /> */}
+          />
         </HamburgerMenuWrapper>
       </ContentWrapper>
     </HeaderWrapper>
@@ -62,11 +59,18 @@ const HeaderWrapper = styled.header`
 
 const ContentWrapper = styled.div`
   width: 100%;
-  max-width: 140rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${({ theme }) => theme.mediaQuery.desktop} {
+    max-width: 120rem;
+  }
+
+  ${({ theme }) => theme.mediaQuery.xl_desktop} {
+    max-width: 140rem;
+  }
 `;
 
 const Circle = styled.div`

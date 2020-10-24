@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
   body { 
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.7rem;
     min-height: 100%;
   }
@@ -29,6 +29,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
   h1, h2, h3, h4 {
+    font-family: 'Mulish', sans-serif; 
     margin: 0 0 2rem 0;
   }
   h1 {
