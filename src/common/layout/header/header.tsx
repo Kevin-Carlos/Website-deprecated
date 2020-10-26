@@ -8,6 +8,7 @@ import { HamburgerIcon } from "./hamburger-icon";
 import { HamburgerMenu } from "./hamburger-menu";
 import { useClickOutside } from "common/hooks";
 import { LinkButton } from "common/ui-elements/buttons";
+import { Link } from "react-router-dom";
 
 
 interface HeaderProps {
@@ -24,10 +25,10 @@ export const Header: FC<HeaderProps> = ({ className }) => {
     <HeaderWrapper className={className}>
       <ContentWrapper>
         <LogoWrapper>
-          <a href={links.home()}>
+          <Link to={links.home()}>
             <Circle />
             <Logo src={darkLogo} />
-          </a>
+          </Link>
         </LogoWrapper>
         <Nav>
           {menuItems.map(i => (
@@ -55,6 +56,7 @@ const HeaderWrapper = styled.header`
   background-color: ${({ theme }) => theme.colors.black};
   height: 6rem;
   padding: 0 1rem;
+  z-index: ${({ theme }) => theme.zIndices.overlay};
 `;
 
 const ContentWrapper = styled.div`

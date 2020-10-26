@@ -3,11 +3,12 @@ import styled from "styled-components";
 
 type SectionProps = {
   className?: string;
+  isFirst?: boolean;
 };
 
-export const Section: FC<SectionProps> = ({ className, children }) => {
+export const Section: FC<SectionProps> = ({ className, children, isFirst }) => {
   return (
-    <StyledSection className={className}>
+    <StyledSection className={className} style={ isFirst ? { paddingTop: "4rem" } : undefined}>
       <ContentWrapper>
         {children}
       </ContentWrapper>
@@ -29,7 +30,7 @@ const ContentWrapper = styled.div`
     padding: 0;
   }
 
-  ${({ theme}) => theme.mediaQuery.xl_desktop} {
+  ${({ theme }) => theme.mediaQuery.xl_desktop} {
     width: 140rem;
   }
 `;

@@ -35,8 +35,8 @@ export const HamburgerMenu: FC<HamburgerMenuProps> = ({ isOpen, setIsOpen }) => 
   return (
     <Menu style={spring}>
       <MenuList>
-        {menuItems.map(i => (
-          <MenuListItem>
+        {menuItems.map((i, idx) => (
+          <MenuListItem key={`${i.name}_${idx}`}>
             <LinkButton href={i.path}>
               {i.name}
             </LinkButton>
@@ -53,7 +53,7 @@ const Menu = styled(animated.nav)`
   right: 0;
   width: 100vw;
   height: 100vh;
-  padding: 2rem;
+  padding: 6rem;
   display: flex;
   flex-direction: column;
   text-align: left;

@@ -40,7 +40,6 @@ const GridHeader = styled(Header)`
 const GridContent = styled.main`
   grid-area: content;
   min-height: calc(100vh - 12rem);
-  padding: 2rem;
 `;
 
 const GridFooter = styled(Footer)`

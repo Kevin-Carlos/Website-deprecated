@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 interface LinkButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> { };
 
@@ -7,11 +8,20 @@ export const LinkButton: FC<LinkButtonProps> = ({
   children,
   ...props
 }) => {
+  if (props.href?.includes("http")) {
+    return (
+      <StyledLink {...props} href={props.href || ""} target={props.href?.includes("http") ? "_blank" : undefined} as="a">
+        <Underline />
+        {children}
+      </StyledLink>
+    )
+  }
+
   return (
-    <StyledA {...props} target={props.href?.includes("http") ? "_blank" : undefined}>
+    <StyledLink {...props} to={props.href || ""}>
       <Underline />
       {children}
-    </StyledA>
+    </StyledLink>
   )
 }
 
@@ -26,21 +36,19 @@ const Underline = styled.hr`
   
 `;
 
-const StyledA = styled.a`
+const StyledLink = styled(Link)`
   text-decoration: none;
   display: inline-block;
   color: ${({ theme }) => theme.colors.white};
   transition: all 0.2s ease-in-out;
   position: relative;
-  /* &:visited {
-    color: ${({ theme }) => theme.colors.white};;
-  } */
-  
+
   &:hover {
     transform: scale(1.2);
     ${Underline} {
       border-width: 1px;
       width: 2rem;
+      color: ${({ theme }) => theme.colors.orange} !important;
     };
   }
 `;

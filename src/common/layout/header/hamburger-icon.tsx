@@ -30,12 +30,15 @@ const Hamburger = styled.button<{ isOpen: boolean }>`
   width: 2rem;
   height: 2rem;
   background: transparent;
+  opacity: .99;
   border: none;
   cursor: pointer;
   padding: 0;
   margin-right: 1rem;
   z-index: ${({ theme }) => theme.zIndices.overlay + 1};
-  position: relative;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
 
   &:focus {
     outline: none;

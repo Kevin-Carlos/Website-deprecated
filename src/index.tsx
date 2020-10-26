@@ -1,17 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { RecoilRoot } from "recoil";
-import { App } from "./pages";
-import { ThemeProvider } from "styled-components";
+
+// Stylization
 import "normalize.css";
 import { theme } from "common/styles";
 import { GlobalStyle } from "common/styles/global";
+import { ThemeProvider } from "styled-components";
+
+// Core application
+import { RecoilRoot } from "recoil";
+import { App } from "./pages";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <RecoilRoot>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ThemeProvider>
   </RecoilRoot>,
   document.getElementById("root"),

@@ -27,9 +27,11 @@ export const GlobalStyle = createGlobalStyle`
   ul {
     line-height: 1.7;
     margin: 0;
+    padding: 0;
+    margin: 0;
   }
   h1, h2, h3, h4 {
-    font-family: 'Mulish', sans-serif; 
+    font-family: 'Poppins', sans-serif;
     margin: 0 0 2rem 0;
   }
   h1 {

@@ -24,7 +24,7 @@ export const Footer: FC<FooterProps> = ({ className }) => {
           href={links.linkedIn()}
           target="_blank"
         >
-          <Icon src={linkedIn} size={3.5} />
+          <Icon src={linkedIn} />
         </IconWrapper>
         <IconWrapper
           href={links.stackoverflow()}
@@ -44,8 +44,6 @@ export const Footer: FC<FooterProps> = ({ className }) => {
 };
 
 const FooterWrapper = styled.footer`
-  /* display: flex;
-  align-items: center; */
   background-color: ${({ theme }) => theme.colors.black};
   height: 100%;
 `;
@@ -66,8 +64,10 @@ const IconWrapper = styled.a`
 `;
 
 const Icon = styled.img<{ size?: number }>`
-  height: 3.2rem;
-  width: ${({ size }) => size ? `${size}rem` : "3.2rem"};
+  max-height: 3.2rem;
+  max-width: 3.2rem;
+  height: 100%;
+  width: 100%;
 
   &:hover {
     opacity: 0.8;
