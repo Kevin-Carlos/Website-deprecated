@@ -11,18 +11,28 @@ import type { Visibility } from "common/types";
 
 type AppProps = {};
 
-
 /**
  * High level routes here get wrapped by the MenuLayout.
  * Sub-routes will always be normal routes
  */
 const App: FC<AppProps> = () => {
-  const [hideFooterItems, setFooterItemVisibility] = useState<Visibility>("hide");
+  const [hideFooterItems, setFooterItemVisibility] = useState<Visibility>(
+    "hide",
+  );
+  const [transparentizeHeaderBG, setHeaderBGVisibility] = useState<Visibility>(
+    "show",
+  );
 
   return (
-    <MenuContext.Provider value={{ hideFooterItems, setFooterItemVisibility }}>
+    <MenuContext.Provider
+      value={{
+        hideFooterItems,
+        setFooterItemVisibility,
+        transparentizeHeaderBG,
+        setHeaderBGVisibility,
+      }}
+    >
       <Switch>
-
         <MenuLayoutRoute path={links.projects().root()}>
           <ProjectsSection />
         </MenuLayoutRoute>
@@ -30,9 +40,7 @@ const App: FC<AppProps> = () => {
         <MenuLayoutRoute path={links.home()}>
           <Homepage />
         </MenuLayoutRoute>
-
       </Switch>
-
     </MenuContext.Provider>
   );
 };

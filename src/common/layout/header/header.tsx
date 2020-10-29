@@ -9,20 +9,22 @@ import { HamburgerMenu } from "./hamburger-menu";
 import { useClickOutside } from "common/hooks";
 import { LinkButton } from "common/ui-elements/buttons";
 import { Link } from "react-router-dom";
+import { Visibility } from "common/types";
 
 
 interface HeaderProps {
   className?: string;
+  backgroundVisibility: Visibility;
 }
 
-export const Header: FC<HeaderProps> = ({ className }) => {
+export const Header: FC<HeaderProps> = ({ className, backgroundVisibility }) => {
   const [mobileNav, toggleMobileNav] = useState(false);
 
   const menuRef = useRef<HTMLDivElement | null>(null);
   useClickOutside(menuRef, () => toggleMobileNav(false));
 
   return (
-    <HeaderWrapper className={className}>
+    <HeaderWrapper className={className} backgroundVisibility={backgroundVisibility}>
       <ContentWrapper>
         <LogoWrapper>
           <Link to={links.home()}>
@@ -52,8 +54,8 @@ export const Header: FC<HeaderProps> = ({ className }) => {
   );
 };
 
-const HeaderWrapper = styled.header`
-  background-color: ${({ theme }) => theme.colors.black};
+const HeaderWrapper = styled.header<{ backgroundVisibility: Visibility }>`
+  background-color: ${({ backgroundVisibility, theme }) => backgroundVisibility === "show" ? theme.colors.black : `transparent`};
   height: 6rem;
   padding: 0 1rem;
   z-index: ${({ theme }) => theme.zIndices.overlay};

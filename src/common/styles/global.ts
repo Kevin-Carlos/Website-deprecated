@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
   a {
     font-size: 1.5rem;
     text-decoration: none;
-    color: ${theme.colors.blue};
+    color: ${theme.colors.white};
   }
   ul {
     line-height: 1.7;
@@ -30,9 +30,10 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     margin: 0 0 2rem 0;
+    color: ${theme.colors.black};
   }
   h1 {
     font-size: 4rem;

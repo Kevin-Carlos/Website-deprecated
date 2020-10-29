@@ -116,10 +116,16 @@ const Flashcard = styled.div<{ side: CardSide }>`
     word-wrap: break-word;
     white-space: initial;
     cursor: pointer;
+
+    & a {
+      color: ${({ theme }) => theme.colors.blue};
+    }
+
     ${({ theme }) => theme.mediaQuery.tablet} {
       width: 50rem;
       height: 30rem;
     }
+
     ${({ side }) => side === "back" && `
       background-image: linear-gradient(to bottom,
           #ffffff 15%,

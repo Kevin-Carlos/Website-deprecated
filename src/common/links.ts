@@ -3,6 +3,7 @@ export const links = {
   linkedIn: () => `https://www.linkedin.com/in/kevin-carlos/`,
   stackoverflow: () => `https://stackoverflow.com/users/12329333/kevin-carlos`,
   github: () => `https://github.com/Kevin-Carlos`,
+  aboutMe: () => `/about`,
   projects: () => ({
     root: () => `/projects`,
     project: () => ({

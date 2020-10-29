@@ -6,18 +6,17 @@ import { MenuContext } from "./menu-context";
 
 type MenuLayoutProps = {};
 
-
 export const MenuLayout: FC<MenuLayoutProps> = ({ children }) => {
   const menuCtx = useContext(MenuContext);
 
   return (
     <GridLayout>
-      <GridHeader />
+      <GridHeader backgroundVisibility={menuCtx.transparentizeHeaderBG} />
       <GridContent>{children}</GridContent>
       <GridFooter hideFooterItems={menuCtx.hideFooterItems} />
     </GridLayout>
-  )
-}
+  );
+};
 
 const GridLayout = styled.article`
   display: grid;

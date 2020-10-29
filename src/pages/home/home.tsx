@@ -2,22 +2,26 @@ import React, { FC, useContext, useEffect } from "react";
 import Particles from "react-tsparticles";
 import { useTheme } from "styled-components";
 import { theme as DefaultSiteTheme } from "common/styles";
-import styled from 'styled-components';
+import styled from "styled-components";
 import { MenuContext } from "common/layout";
 import { Hero } from "./components/hero";
 // import { Bars } from './components/bars';
 
 type HomepageProps = {};
 
-export const Homepage: FC<HomepageProps> = ({ }) => {
+export const Homepage: FC<HomepageProps> = ({}) => {
   const theme = useTheme();
   const menuCtx = useContext(MenuContext);
 
   useEffect(() => {
     menuCtx.setFooterItemVisibility("hide");
+    menuCtx.setHeaderBGVisibility("hide");
 
-    return () => menuCtx.setFooterItemVisibility("show");
-  }, [])
+    return () => {
+      menuCtx.setFooterItemVisibility("show");
+      menuCtx.setHeaderBGVisibility("show");
+    };
+  }, []);
 
   return (
     <HomeWrapper>
@@ -44,12 +48,13 @@ const SkewedTransparentDiv = styled.div`
   background-color: rgba(0, 0, 0, 0.2);
   position: fixed;
   bottom: -70rem;
+  pointer-events: none;
 `;
 
 const StyledParticles = styled(Particles)`
   margin-bottom: -1rem;
-  height: calc(100vh - 12rem);
-  position: absolute;
+  height: 100vh;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -59,7 +64,7 @@ const StyledParticles = styled(Particles)`
 // const StyledHero = styled(Hero)`
 //   ${({ theme }) => theme.mediaQuery.laptop} {
 //     z-index: ${({ theme }) => theme.zIndices.standard};
-//     position: relative; 
+//     position: relative;
 //   }
 // `;
 
@@ -70,7 +75,7 @@ const StyledParticles = styled(Particles)`
 
 //   ${({ theme }) => theme.mediaQuery.laptop} {
 //     z-index: ${({ theme }) => theme.zIndices.underlay};
-//     position: relative; 
+//     position: relative;
 //   }
 // `;
 
@@ -91,35 +96,35 @@ const particleOptions = (theme: typeof DefaultSiteTheme) => ({
       },
       onClick: {
         enable: true,
-        mode: "push"
+        mode: "push",
       },
-      resize: true
+      resize: true,
     },
     modes: {
       grab: {
         distance: 400,
         links: {
-          opacity: 1
-        }
+          opacity: 1,
+        },
       },
       bubble: {
         distance: 400,
         size: 40,
         duration: 2,
         opacity: 8,
-        speed: 3
+        speed: 3,
       },
       repulse: {
         distance: 200,
-        duration: 0.4
+        duration: 0.4,
       },
       push: {
         quantity: 4,
       },
       remove: {
-        quantity: 2
-      }
-    }
+        quantity: 2,
+      },
+    },
   },
   // backgroundMode: {
   //   enable: true,
@@ -131,7 +136,7 @@ const particleOptions = (theme: typeof DefaultSiteTheme) => ({
       density: {
         enable: true,
         area: 789,
-      }
+      },
     },
     color: {
       value: theme.colors.white,
@@ -142,15 +147,15 @@ const particleOptions = (theme: typeof DefaultSiteTheme) => ({
         image: {
           src: "img/github.svg",
           width: 100,
-          height: 100
+          height: 100,
         },
         polygon: {
           nb_sides: 7,
-        }
-      }
+        },
+      },
     },
     opacity: {
-      value: 0.70,
+      value: 0.7,
       random: {
         enable: true,
       },
@@ -159,7 +164,7 @@ const particleOptions = (theme: typeof DefaultSiteTheme) => ({
         minimumValue: 0.1,
         sync: false,
         speed: 1,
-      }
+      },
     },
     size: {
       value: 3,
@@ -172,13 +177,13 @@ const particleOptions = (theme: typeof DefaultSiteTheme) => ({
         speed: 2.4,
         minimumValue: 0.1,
         sync: true,
-      }
+      },
     },
     links: {
       enable: true,
       distance: 177,
       color: theme.colors.white,
-      opacity: 0.50,
+      opacity: 0.5,
       width: 1,
     },
     move: {
@@ -198,7 +203,7 @@ const particleOptions = (theme: typeof DefaultSiteTheme) => ({
         enable: false,
         x: 600,
         y: 1200,
-      }
+      },
     },
-  }
+  },
 });

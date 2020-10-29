@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 
 type ProjectDashboardProps = {};
 
-export const ProjectDashboard: FC<ProjectDashboardProps> = ({ }) => {
+export const ProjectDashboard: FC<ProjectDashboardProps> = ({}) => {
   return (
     <StyledSection>
       <div>
         <h1>My Projects</h1>
         <ProjectGrid>
-          {projectItems.map(project => (
+          {projectItems.map((project) => (
             <li key={project.name}>
               <CardLink to={project.path}>
                 <Card>
@@ -26,7 +26,7 @@ export const ProjectDashboard: FC<ProjectDashboardProps> = ({ }) => {
       </div>
     </StyledSection>
   );
-}
+};
 
 const StyledSection = styled(Section)`
   padding: 2rem;
@@ -36,9 +36,10 @@ const ProjectGrid = styled.ul`
   list-style: none;
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fill, 1fr);
   justify-self: center;
-  ${({ theme }) => theme.mediaQuery.laptop} {
+
+  ${({ theme }) => theme.mediaQuery.tablet} {
     grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
   }
 `;
@@ -54,8 +55,13 @@ const Card = styled.div`
   border-radius: 0.3rem;
   transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
   cursor: pointer;
+
   &:hover {
     transform: scale3d(1.01, 1.01, 1);
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  & a {
+    color: ${({ theme }) => theme.colors.blue};
   }
 `;
