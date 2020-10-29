@@ -1,17 +1,12 @@
 import React, { FC } from "react";
-import { darken } from "polished";
 import styled from "styled-components";
 
 interface LabelProps {
   className?: string;
   label: string;
-};
+}
 
-export const Label: FC<LabelProps> = ({
-  className,
-  label,
-  children,
-}) => {
+export const Label: FC<LabelProps> = ({ className, label, children }) => {
   return (
     <LabelWrapper className={className}>
       <HTMLLabel style={{ width: "100%" }} htmlFor={label}>
@@ -19,8 +14,8 @@ export const Label: FC<LabelProps> = ({
       </HTMLLabel>
       {children}
     </LabelWrapper>
-  )
-}
+  );
+};
 
 const LabelWrapper = styled.div`
   display: flex;
@@ -34,5 +29,5 @@ const HTMLLabel = styled.label`
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  color: ${({ theme }) => darken(0.4, theme.colors.light_gray)};
+  color: ${({ theme }) => theme.colors.light_gray};
 `;

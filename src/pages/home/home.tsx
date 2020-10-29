@@ -5,7 +5,6 @@ import { theme as DefaultSiteTheme } from "common/styles";
 import styled from "styled-components";
 import { MenuContext } from "common/layout";
 import { Hero } from "./components/hero";
-// import { Bars } from './components/bars';
 
 type HomepageProps = {};
 
@@ -29,26 +28,13 @@ export const Homepage: FC<HomepageProps> = ({}) => {
         id="tsparticles-home-bg"
         options={particleOptions(theme)}
       />
-      <SkewedTransparentDiv />
       <Hero />
-      {/* <StyledHero />
-      <StyledBars /> */}
     </HomeWrapper>
   );
 };
 
 const HomeWrapper = styled.section`
   position: relative;
-`;
-
-const SkewedTransparentDiv = styled.div`
-  width: 100vw;
-  height: 100%;
-  transform: skewY(-12deg);
-  background-color: rgba(0, 0, 0, 0.2);
-  position: fixed;
-  bottom: -70rem;
-  pointer-events: none;
 `;
 
 const StyledParticles = styled(Particles)`
@@ -60,24 +46,6 @@ const StyledParticles = styled(Particles)`
   left: 0;
   right: 0;
 `;
-
-// const StyledHero = styled(Hero)`
-//   ${({ theme }) => theme.mediaQuery.laptop} {
-//     z-index: ${({ theme }) => theme.zIndices.standard};
-//     position: relative;
-//   }
-// `;
-
-// const StyledBars = styled(Bars)`
-//   /* & > div {
-//     margin: 0 auto 10rem !important;
-//   } */
-
-//   ${({ theme }) => theme.mediaQuery.laptop} {
-//     z-index: ${({ theme }) => theme.zIndices.underlay};
-//     position: relative;
-//   }
-// `;
 
 const particleOptions = (theme: typeof DefaultSiteTheme) => ({
   background: {

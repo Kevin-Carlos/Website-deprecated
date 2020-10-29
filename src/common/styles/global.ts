@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { theme } from "./theme";
 
-
 export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%; /* To make 1rem === 10px for easy calculation */
@@ -33,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     margin: 0 0 2rem 0;
-    color: ${theme.colors.black};
+    color: ${theme.colors.white};
   }
   h1 {
     font-size: 4rem;

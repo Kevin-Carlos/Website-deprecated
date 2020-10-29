@@ -8,15 +8,19 @@ type SectionProps = {
 
 export const Section: FC<SectionProps> = ({ className, children, isFirst }) => {
   return (
-    <StyledSection className={className} style={ isFirst ? { paddingTop: "4rem" } : undefined}>
-      <ContentWrapper>
-        {children}
-      </ContentWrapper>
+    <StyledSection
+      className={className}
+      style={isFirst ? { paddingTop: "4rem" } : undefined}
+    >
+      <ContentWrapper>{children}</ContentWrapper>
     </StyledSection>
-  )
-}
+  );
+};
 
-const StyledSection = styled.section``;
+const StyledSection = styled.section`
+  position: relative;
+  z-index: ${({ theme }) => theme.zIndices.standard};
+`;
 
 const ContentWrapper = styled.div`
   width: 100%;

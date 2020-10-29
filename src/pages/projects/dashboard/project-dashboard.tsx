@@ -50,18 +50,22 @@ const CardLink = styled(Link)`
 
 const Card = styled.div`
   box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
-  border: 1px solid ${({ theme }) => theme.colors.light_gray};
+  border: 1px solid ${({ theme }) => theme.colors.dark_teal};
   padding: 2rem;
   border-radius: 0.3rem;
   transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
   cursor: pointer;
 
   &:hover {
-    transform: scale3d(1.01, 1.01, 1);
-    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale3d(0.99, 0.99, 1);
+    box-shadow: -2px 2px 5px rgba(255, 255, 255, 0.05);
   }
 
   & a {
     color: ${({ theme }) => theme.colors.blue};
+  }
+
+  &:last-child {
+    color: ${({ theme }) => theme.colors.light_gray};
   }
 `;

@@ -14,31 +14,22 @@ interface FooterProps {
 export const Footer: FC<FooterProps> = ({ className, hideFooterItems }) => {
   return (
     <FooterWrapper className={className}>
-      { hideFooterItems === "show" ? (
+      {hideFooterItems === "show" ? (
         <SocialRow
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            height: "100%"
+            height: "100%",
           }}
         >
-          <IconWrapper
-            href={links.linkedIn()}
-            target="_blank"
-          >
+          <IconWrapper href={links.linkedIn()} target="_blank">
             <Icon src={linkedIn} />
           </IconWrapper>
-          <IconWrapper
-            href={links.stackoverflow()}
-            target="_blank"
-          >
+          <IconWrapper href={links.stackoverflow()} target="_blank">
             <Icon src={stackOverflow} />
           </IconWrapper>
-          <IconWrapper
-            href={links.github()}
-            target="_blank"
-          >
+          <IconWrapper href={links.github()} target="_blank">
             <Icon src={github} />
           </IconWrapper>
         </SocialRow>
@@ -53,6 +44,8 @@ const FooterWrapper = styled.footer`
 `;
 
 const SocialRow = styled.div`
+  z-index: ${({ theme }) => theme.zIndices.standard};
+
   & > a {
     margin-right: 2rem;
   }
@@ -74,6 +67,6 @@ const Icon = styled.img<{ size?: number }>`
   width: 100%;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 `;

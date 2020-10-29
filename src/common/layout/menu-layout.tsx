@@ -36,12 +36,25 @@ const GridHeader = styled(Header)`
   left: 0;
   display: flex;
   align-items: center;
-  /* z-index: ${({ theme }) => theme.zIndices.header}; */
 `;
 
 const GridContent = styled.main`
   grid-area: content;
   min-height: calc(100vh - 12rem);
+  background-color: ${({ theme }) => theme.colors.black};
+
+  /* Skewed transparent div  */
+  &::after {
+    content: "";
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100%;
+    bottom: -70rem;
+    transform: skewY(-12deg);
+    pointer-events: none;
+    z-index: ${({ theme }) => theme.zIndices.underlay};
+  }
 `;
 
 const GridFooter = styled(Footer)`

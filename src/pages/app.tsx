@@ -37,7 +37,7 @@ const App: FC<AppProps> = () => {
           <ProjectsSection />
         </MenuLayoutRoute>
 
-        <MenuLayoutRoute path={links.home()}>
+        <MenuLayoutRoute exact path={links.home()}>
           <Homepage />
         </MenuLayoutRoute>
       </Switch>

@@ -8,12 +8,14 @@ import { FlashcardInputs } from "./form/flashcard-inputs";
 
 type CardSide = "front" | "back";
 
-export const Flashcards: FC = ({ }) => {
+export const Flashcards: FC = ({}) => {
   const [index, setIndex] = useState(0);
-  const [sideOfCard, setSideOfCard] = useState<{ idx: number, side: CardSide }>({
-    idx: index,
-    side: "front",
-  });
+  const [sideOfCard, setSideOfCard] = useState<{ idx: number; side: CardSide }>(
+    {
+      idx: index,
+      side: "front",
+    },
+  );
   const cards = useRecoilValue(flashcardState);
   const updateIndex = (v: number) => setIndex(v);
 
@@ -21,9 +23,9 @@ export const Flashcards: FC = ({ }) => {
   useEffect(() => {
     setSideOfCard({
       idx: index,
-      side: "front"
-    })
-  }, [index])
+      side: "front",
+    });
+  }, [index]);
 
   return (
     <Section isFirst>
@@ -36,7 +38,7 @@ export const Flashcards: FC = ({ }) => {
               return;
             }
 
-            setIndex(index - 1)
+            setIndex(index - 1);
           }}
           shouldHide={index === 0}
         />
@@ -45,27 +47,29 @@ export const Flashcards: FC = ({ }) => {
             /* Flip card */
             setSideOfCard({
               idx: index,
-              side: sideOfCard.side === "front"
-                ? "back"
-                : "front"
-            })}
+              side: sideOfCard.side === "front" ? "back" : "front",
+            })
+          }
           side={sideOfCard.side}
         >
           <p style={{ userSelect: "none" }}>
-            {cards.length ?
-              sideOfCard.side === "front"
-                ? cards[index].subject
-                : (
-                  <>
-                    {cards[index].description.includes("http")
-                      ? <a href={cards[index].description} target="_blank">{cards[index].description}</a>
-                      : cards[index].description
-                    }
-                  </>
-                )
-              :
+            {cards.length ? (
+              sideOfCard.side === "front" ? (
+                cards[index].subject
+              ) : (
+                <>
+                  {cards[index].description.includes("http") ? (
+                    <a href={cards[index].description} target="_blank">
+                      {cards[index].description}
+                    </a>
+                  ) : (
+                    cards[index].description
+                  )}
+                </>
+              )
+            ) : (
               []
-            }
+            )}
           </p>
         </Flashcard>
         <StyledChevronRight
@@ -81,14 +85,11 @@ export const Flashcards: FC = ({ }) => {
         />
       </CardWrapper>
       <InputWrapper>
-        <FlashcardInputs
-          cardIndex={index}
-          setIndex={updateIndex}
-        />
+        <FlashcardInputs cardIndex={index} setIndex={updateIndex} />
       </InputWrapper>
     </Section>
-  )
-}
+  );
+};
 
 const InputWrapper = styled.div`
   display: flex;
@@ -103,30 +104,32 @@ const CardWrapper = styled.div`
 `;
 
 const Flashcard = styled.div<{ side: CardSide }>`
-    width: 30rem;
-    height: 20rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: ${({ theme }) => theme.colors.white};
-    
-    border: 1px solid ${({ theme }) => theme.colors.light_gray};
-    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    word-wrap: break-word;
-    white-space: initial;
-    cursor: pointer;
+  width: 30rem;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: ${({ theme }) => theme.colors.white};
 
-    & a {
-      color: ${({ theme }) => theme.colors.blue};
-    }
+  border: 1px solid ${({ theme }) => theme.colors.light_gray};
+  box-shadow: -2px 2px 5px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  word-wrap: break-word;
+  white-space: initial;
+  cursor: pointer;
 
-    ${({ theme }) => theme.mediaQuery.tablet} {
-      width: 50rem;
-      height: 30rem;
-    }
+  & a {
+    color: ${({ theme }) => theme.colors.blue};
+  }
 
-    ${({ side }) => side === "back" && `
+  ${({ theme }) => theme.mediaQuery.tablet} {
+    width: 50rem;
+    height: 30rem;
+  }
+
+  ${({ side }) =>
+    side === "back" &&
+    `
       background-image: linear-gradient(to bottom,
           #ffffff 15%,
           #F94545 16%,
@@ -159,16 +162,20 @@ const Flashcard = styled.div<{ side: CardSide }>`
     `};
 `;
 
-const StyledChevronRight = styled(ChevronRight) <{ shouldHide: boolean }>`
-  ${({ shouldHide }) => shouldHide && `
+const StyledChevronRight = styled(ChevronRight)<{ shouldHide: boolean }>`
+  ${({ shouldHide }) =>
+    shouldHide &&
+    `
     opacity: 0;
     pointer-events: none;
     cursor: normal;
   `};
 `;
 
-const StyledChevronLeft = styled(ChevronLeft) <{ shouldHide: boolean }>`
-  ${({ shouldHide }) => shouldHide && `
+const StyledChevronLeft = styled(ChevronLeft)<{ shouldHide: boolean }>`
+  ${({ shouldHide }) =>
+    shouldHide &&
+    `
     opacity: 0;
     pointer-events: none;
     cursor: normal;
