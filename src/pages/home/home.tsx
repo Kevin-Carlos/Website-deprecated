@@ -4,7 +4,7 @@ import { useTheme } from "styled-components";
 import { theme as DefaultSiteTheme } from "common/styles";
 import styled from "styled-components";
 import { MenuContext } from "common/layout";
-import { Hero } from "./components/hero";
+import { Hero } from "./hero";
 
 type HomepageProps = {};
 

@@ -8,6 +8,7 @@ import { ProjectsSection } from "./projects";
 import { Homepage } from "./home";
 import { MenuContext } from "common/layout";
 import type { Visibility } from "common/types";
+import { AboutMe } from "./about";
 
 type AppProps = {};
 
@@ -35,6 +36,10 @@ const App: FC<AppProps> = () => {
       <Switch>
         <MenuLayoutRoute path={links.projects().root()}>
           <ProjectsSection />
+        </MenuLayoutRoute>
+
+        <MenuLayoutRoute path={links.aboutMe()}>
+          <AboutMe />
         </MenuLayoutRoute>
 
         <MenuLayoutRoute exact path={links.home()}>
