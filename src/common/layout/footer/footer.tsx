@@ -4,41 +4,45 @@ import stackOverflow from "common/assets/icons/brands/so-icon.svg";
 import github from "common/assets/icons/brands/github.png";
 import linkedIn from "common/assets/icons/brands/linkedin.png";
 import { links } from "common/links";
+import type { Visibility } from "common/types";
 
 interface FooterProps {
   className?: string;
+  hideFooterItems: Visibility;
 }
 
-export const Footer: FC<FooterProps> = ({ className }) => {
+export const Footer: FC<FooterProps> = ({ className, hideFooterItems }) => {
   return (
     <FooterWrapper className={className}>
-      <SocialRow
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100%"
-        }}
-      >
-        <IconWrapper
-          href={links.linkedIn()}
-          target="_blank"
+      { hideFooterItems === "show" ? (
+        <SocialRow
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%"
+          }}
         >
-          <Icon src={linkedIn} />
-        </IconWrapper>
-        <IconWrapper
-          href={links.stackoverflow()}
-          target="_blank"
-        >
-          <Icon src={stackOverflow} />
-        </IconWrapper>
-        <IconWrapper
-          href={links.github()}
-          target="_blank"
-        >
-          <Icon src={github} />
-        </IconWrapper>
-      </SocialRow>
+          <IconWrapper
+            href={links.linkedIn()}
+            target="_blank"
+          >
+            <Icon src={linkedIn} />
+          </IconWrapper>
+          <IconWrapper
+            href={links.stackoverflow()}
+            target="_blank"
+          >
+            <Icon src={stackOverflow} />
+          </IconWrapper>
+          <IconWrapper
+            href={links.github()}
+            target="_blank"
+          >
+            <Icon src={github} />
+          </IconWrapper>
+        </SocialRow>
+      ) : null}
     </FooterWrapper>
   );
 };

@@ -1,17 +1,20 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import styled from "styled-components";
 import { Header } from "./header";
 import { Footer } from "./footer";
+import { MenuContext } from "./menu-context";
 
+type MenuLayoutProps = {};
 
-type MenuLayoutProps = { };
 
 export const MenuLayout: FC<MenuLayoutProps> = ({ children }) => {
+  const menuCtx = useContext(MenuContext);
+
   return (
     <GridLayout>
       <GridHeader />
       <GridContent>{children}</GridContent>
-      <GridFooter />
+      <GridFooter hideFooterItems={menuCtx.hideFooterItems} />
     </GridLayout>
   )
 }

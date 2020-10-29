@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Switch } from "react-router-dom";
 import { MenuLayoutRoute } from "common/routes";
 import { links } from "common/links";
@@ -6,29 +6,10 @@ import { links } from "common/links";
 // Components
 import { ProjectsSection } from "./projects";
 import { Homepage } from "./home";
+import { MenuContext } from "common/layout";
+import type { Visibility } from "common/types";
 
 type AppProps = {};
-
-// type LocationT = {
-//   id: string;
-//   component: React.ReactElement;
-//   path: string;
-//   isExact?: boolean;
-// };
-
-// const locations: LocationT[] = [
-//   {
-//     id: "homepage",
-//     isExact: true,
-//     path: links.home(),
-//     component: <Homepage />,
-//   },
-//   {
-//     id: "project-dashboard",
-//     path: links.projects().root(),
-//     component: <ProjectsSection />,
-//   }
-// ];
 
 
 /**
@@ -36,16 +17,10 @@ type AppProps = {};
  * Sub-routes will always be normal routes
  */
 const App: FC<AppProps> = () => {
-  // const location = useLocation();
-
-
-  // const routeTransitions = useTransition(location, location => location.pathname, {
-  //   from: { opacity: 0, transform: "translateX(-10rem)" },
-  //   enter: { opacity: 1, transform: "translateX(0)" }
-  // });
+  const [hideFooterItems, setFooterItemVisibility] = useState<Visibility>("hide");
 
   return (
-    <>
+    <MenuContext.Provider value={{ hideFooterItems, setFooterItemVisibility }}>
       <Switch>
 
         <MenuLayoutRoute path={links.projects().root()}>
@@ -58,7 +33,7 @@ const App: FC<AppProps> = () => {
 
       </Switch>
 
-    </>
+    </MenuContext.Provider>
   );
 };
 

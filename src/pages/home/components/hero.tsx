@@ -1,13 +1,12 @@
-import React, { FC, useState, useEffect, useRef } from "react";
-import HeroSvg from "common/assets/animated/hero.svg";
-import styled from "styled-components";
+import React, { FC, useRef, useState, useEffect } from "react";
+import { lighten } from "polished";
 import { animated, useTransition } from "react-spring";
+import styled from "styled-components";
 import { hiItems } from "./languages";
-import { Section } from "common/sections/section";
 
 type HeroProps = {
   className?: string;
-}
+};
 
 export const Hero: FC<HeroProps> = ({ className }) => {
   const [index, setIndex] = useState(0);
@@ -37,57 +36,47 @@ export const Hero: FC<HeroProps> = ({ className }) => {
 
 
   return (
-    <StyledSection className={className} src={HeroSvg}>
-      <Content>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            height: "100%",
-            width: "100%"
-          }}
-        >
-          <div>
-            <HeroHeader>
-              {`</`}
-              {transitions.map(({ item: language, props, key }) => {
-                return (
-                  <animated.span
-                    ref={valueRef}
-                    key={key}
-                    style={{ ...props, position: "absolute", marginLeft: "0.5rem" }}
-                  >
-                    {language.item}
-                  </animated.span>
-                )
-              })}
-              <Text length={length + 10}>
-                {`>`}
-              </Text>
-            </HeroHeader>
-          </div>
-        </div>
-      </Content>
-    </StyledSection>
+    <Content>
+      <h1>
+        <span>
+          {transitions.map(({ item: language, props, key }) => {
+            return (
+              <animated.span
+                ref={valueRef}
+                key={key}
+                style={{ ...props, position: "absolute" }}
+              >
+                {language.item},
+              </animated.span>
+            )
+          })}
+          <Text length={length + 15}>
+            I'm
+          </Text>
+        </span>
+        <ColoredName>
+          Kevin Carlos
+        </ColoredName>
+      </h1>
+    </Content>
   );
 }
 
-const StyledSection = styled(Section) <{ src: string }>`
-  height: 50vh;
-  background-image: ${({ src }) => `url(${src})`};
-  background-size: cover;
-`;
-
 const Content = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
+  width: 30rem;
+  position: fixed;
+  top: 50%;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  color: ${({ theme }) => theme.colors.white};
+
+  ${({ theme }) => theme.mediaQuery.tablet} {
+    left: 35vw;
+  }
 `;
 
-const HeroHeader = styled.h1`
-  max-width: 100vw;
-  margin: 0;
+const ColoredName = styled.p`
+  color: ${({ theme }) => lighten(0.2, theme.colors.light_teal)};
 `;
 
 const Text = styled.span<{ length: number }>`
