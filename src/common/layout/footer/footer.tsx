@@ -4,7 +4,6 @@ import stackOverflow from "common/assets/icons/brands/so-icon.svg";
 import github from "common/assets/icons/brands/github.png";
 import linkedIn from "common/assets/icons/brands/linkedin.png";
 import { links } from "common/links";
-import type { Visibility } from "common/types";
 
 interface FooterProps {
   className?: string;

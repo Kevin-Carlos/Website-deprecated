@@ -7,7 +7,6 @@ import { links } from "common/links";
 import { ProjectsSection } from "./projects";
 import { Homepage } from "./home";
 import { MenuContext } from "common/layout";
-import type { Visibility } from "common/types";
 import { AboutMe } from "./about";
 
 type AppProps = {};

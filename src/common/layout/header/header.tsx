@@ -9,7 +9,6 @@ import { HamburgerMenu } from "./hamburger-menu";
 import { useClickOutside } from "common/hooks";
 import { LinkButton } from "common/ui-elements/buttons";
 import { Link } from "react-router-dom";
-import { Visibility } from "common/types";
 
 interface HeaderProps {
   className?: string;
