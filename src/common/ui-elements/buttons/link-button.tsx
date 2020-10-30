@@ -2,19 +2,22 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-interface LinkButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> { };
+interface LinkButtonProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
 
-export const LinkButton: FC<LinkButtonProps> = ({
-  children,
-  ...props
-}) => {
+export const LinkButton: FC<LinkButtonProps> = ({ children, ...props }) => {
   if (props.href?.includes("http")) {
     return (
-      <StyledLink {...props} href={props.href || ""} target={props.href?.includes("http") ? "_blank" : undefined} as="a">
+      <StyledLink
+        {...props}
+        href={props.href || ""}
+        target={props.href?.includes("http") ? "_blank" : undefined}
+        as="a"
+      >
         <Underline />
         {children}
       </StyledLink>
-    )
+    );
   }
 
   return (
@@ -22,8 +25,8 @@ export const LinkButton: FC<LinkButtonProps> = ({
       <Underline />
       {children}
     </StyledLink>
-  )
-}
+  );
+};
 
 const Underline = styled.hr`
   color: ${({ theme }) => theme.colors.orange} !important;
@@ -33,7 +36,6 @@ const Underline = styled.hr`
   left: 0;
   width: 0;
   transition: all 0.2s ease-in-out;
-  
 `;
 
 const StyledLink = styled(Link)`
@@ -49,6 +51,6 @@ const StyledLink = styled(Link)`
       border-width: 1px;
       width: 2rem;
       color: ${({ theme }) => theme.colors.orange} !important;
-    };
+    }
   }
 `;

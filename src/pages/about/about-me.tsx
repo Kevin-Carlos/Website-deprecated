@@ -23,24 +23,34 @@ export const AboutMe: FC<AboutMeProps> = ({}) => {
 
   return (
     <FullHeightSection>
-      <ContentWrapper>
-        <h1>About Me</h1>
+      <div>
+        <h1
+          style={{
+            textAlign: "center",
+            marginRight: "6rem",
+            textTransform: "capitalize",
+          }}
+        >
+          {headerType === "about" ? `About Me` : headerType}
+        </h1>
         <CircleWrapper>
-          {transitionedHeaderItems.map(({ item, key, props }) => (
-            <Circle
-              size={item.size}
-              color={item.color}
-              key={key}
-              style={props}
-              onClick={() => {
-                setHeaderType(item.key);
-              }}
-            >
-              <CircleHeaders>{item.title}</CircleHeaders>
-            </Circle>
-          ))}
+          {transitionedHeaderItems.map(({ item, key, props }) => {
+            console.log("isActive", item.key === headerType);
+            return (
+              <Circle
+                size={item.size}
+                color={item.color}
+                active={item.key === headerType}
+                key={key}
+                style={props}
+                onClick={() => setHeaderType(item.key)}
+              >
+                <CircleHeaders>{item.title}</CircleHeaders>
+              </Circle>
+            );
+          })}
         </CircleWrapper>
-      </ContentWrapper>
+      </div>
       <ContentBlurb type={headerType} />
     </FullHeightSection>
   );
@@ -90,11 +100,9 @@ const FullHeightSection = styled(Section)`
   }
 `;
 
-const ContentWrapper = styled.div``;
-
 const CircleWrapper = styled.ul`
   display: flex;
-  margin-bottom: 8rem;
+  margin-bottom: 2rem;
 
   & > li:not(:last-child) {
     margin-right: 1.5rem;
@@ -106,7 +114,11 @@ const CircleWrapper = styled.ul`
   }
 `;
 
-const Circle = styled(animated.li)<{ size: number; color: ColorNames }>`
+const Circle = styled(animated.li)<{
+  size: number;
+  color: ColorNames;
+  active: boolean;
+}>`
   height: ${({ size }) => `${size}rem`};
   width: ${({ size }) => `${size}rem`};
   background-color: ${({ theme, color }) => theme.colors[color]};
@@ -116,6 +128,15 @@ const Circle = styled(animated.li)<{ size: number; color: ColorNames }>`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition-property: scale3d;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+
+  ${({ active }) =>
+    active &&
+    `
+    transform: scale3d(1.1, 1.1, 1) !important;
+  `};
 `;
 
 const CircleHeaders = styled.h2`

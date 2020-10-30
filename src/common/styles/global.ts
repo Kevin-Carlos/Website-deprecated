@@ -19,7 +19,6 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
   a {
-    font-size: 1.5rem;
     text-decoration: none;
     color: ${theme.colors.white};
   }
@@ -43,8 +42,11 @@ export const GlobalStyle = createGlobalStyle`
   h3 {
   }
   p {
-    margin: 0;
+    margin: 0 0 2rem 0;
     line-height: 1.5;
+  }
+  blockquote {
+    margin: 0 0 0 3rem;
   }
   input, button {
     font-family: inherit;

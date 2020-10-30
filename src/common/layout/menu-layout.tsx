@@ -54,6 +54,10 @@ const GridContent = styled.main`
     transform: skewY(-12deg);
     pointer-events: none;
     z-index: ${({ theme }) => theme.zIndices.underlay};
+
+    ${({ theme }) => theme.mediaQuery.tablet} {
+      bottom: -85vh;
+    }
   }
 `;
 

@@ -11,20 +11,25 @@ import { LinkButton } from "common/ui-elements/buttons";
 import { Link } from "react-router-dom";
 import { Visibility } from "common/types";
 
-
 interface HeaderProps {
   className?: string;
   backgroundVisibility: Visibility;
 }
 
-export const Header: FC<HeaderProps> = ({ className, backgroundVisibility }) => {
+export const Header: FC<HeaderProps> = ({
+  className,
+  backgroundVisibility,
+}) => {
   const [mobileNav, toggleMobileNav] = useState(false);
 
   const menuRef = useRef<HTMLDivElement | null>(null);
   useClickOutside(menuRef, () => toggleMobileNav(false));
 
   return (
-    <HeaderWrapper className={className} backgroundVisibility={backgroundVisibility}>
+    <HeaderWrapper
+      className={className}
+      backgroundVisibility={backgroundVisibility}
+    >
       <ContentWrapper>
         <LogoWrapper>
           <Link to={links.home()}>
@@ -33,21 +38,15 @@ export const Header: FC<HeaderProps> = ({ className, backgroundVisibility }) => 
           </Link>
         </LogoWrapper>
         <Nav>
-          {menuItems.map(i => (
+          {menuItems.map((i) => (
             <LinkButton href={i.path} key={i.name}>
               {i.name}
             </LinkButton>
           ))}
         </Nav>
         <HamburgerMenuWrapper ref={menuRef}>
-          <HamburgerIcon
-            isOpen={mobileNav}
-            setIsOpen={toggleMobileNav}
-          />
-          <HamburgerMenu
-            isOpen={mobileNav}
-            setIsOpen={toggleMobileNav}
-          />
+          <HamburgerIcon isOpen={mobileNav} setIsOpen={toggleMobileNav} />
+          <HamburgerMenu isOpen={mobileNav} setIsOpen={toggleMobileNav} />
         </HamburgerMenuWrapper>
       </ContentWrapper>
     </HeaderWrapper>
@@ -55,7 +54,8 @@ export const Header: FC<HeaderProps> = ({ className, backgroundVisibility }) => 
 };
 
 const HeaderWrapper = styled.header<{ backgroundVisibility: Visibility }>`
-  background-color: ${({ backgroundVisibility, theme }) => backgroundVisibility === "show" ? theme.colors.black : `transparent`};
+  background-color: ${({ backgroundVisibility, theme }) =>
+    backgroundVisibility === "show" ? theme.colors.black : `transparent`};
   height: 6rem;
   padding: 0 1rem;
   z-index: ${({ theme }) => theme.zIndices.overlay};
@@ -67,14 +67,15 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 6rem 0 2rem;
 
-  ${({ theme }) => theme.mediaQuery.desktop} {
+  /* ${({ theme }) => theme.mediaQuery.desktop} {
     max-width: 120rem;
   }
 
   ${({ theme }) => theme.mediaQuery.xl_desktop} {
     max-width: 140rem;
-  }
+  } */
 `;
 
 const Circle = styled.div`
@@ -84,7 +85,7 @@ const Circle = styled.div`
   height: 4rem;
   position: absolute;
   border-width: 0;
-  
+
   transition: all 0.2s ease-in-out;
 `;
 
@@ -99,13 +100,15 @@ const LogoWrapper = styled.div`
   width: 4rem;
   &:hover {
     ${Circle} {
-      background-color: ${({ theme }) => transparentize(0.2, theme.colors.white)};
+      background-color: ${({ theme }) =>
+        transparentize(0.2, theme.colors.white)};
     }
   }
 `;
 
 const Nav = styled.nav`
   display: none;
+  font-size: 1.5rem;
 
   ${({ theme }) => theme.mediaQuery.laptop} {
     display: inherit;

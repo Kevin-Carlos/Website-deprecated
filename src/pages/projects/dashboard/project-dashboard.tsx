@@ -8,7 +8,7 @@ type ProjectDashboardProps = {};
 
 export const ProjectDashboard: FC<ProjectDashboardProps> = ({}) => {
   return (
-    <StyledSection>
+    <StyledSection isFirst>
       <div>
         <h1>My Projects</h1>
         <ProjectGrid>
@@ -28,9 +28,7 @@ export const ProjectDashboard: FC<ProjectDashboardProps> = ({}) => {
   );
 };
 
-const StyledSection = styled(Section)`
-  padding: 2rem;
-`;
+const StyledSection = styled(Section)``;
 
 const ProjectGrid = styled.ul`
   list-style: none;

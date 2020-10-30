@@ -69,7 +69,7 @@ export const FlashcardInputs: FC<FlashcardInputsProps> = ({
                 <span style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                   Add
                   <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2rem" style={{ marginBottom: "0.5rem" }}>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                   </svg>
                 </span>
               </SubmitButton>
