@@ -26,6 +26,6 @@ module.exports = {
   },
   alias: {
     common: "./src/common",
-    store: "./src/store",
+    state: "./src/state",
   }
 };
