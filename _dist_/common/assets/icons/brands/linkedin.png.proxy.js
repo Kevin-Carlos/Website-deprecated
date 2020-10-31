@@ -1,0 +1,1 @@
+export default "/_dist_/common/assets/icons/brands/linkedin.png";
