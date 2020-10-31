@@ -1,13 +1,14 @@
 module.exports = {
   baseUrl: "./src",
   mount: {
-    public: '/',
-    src: '/_dist_',
+    public: "/",
+    src: "/_dist_",
   },
   plugins: [
-    '@snowpack/plugin-react-refresh',
-    '@snowpack/plugin-dotenv',
-    '@snowpack/plugin-typescript',
+    "@snowpack/plugin-react-refresh",
+    "@snowpack/plugin-dotenv",
+    "@snowpack/plugin-typescript",
+    "@snowpack/plugin-webpack",
   ],
   install: [
     /* ... */
@@ -27,5 +28,5 @@ module.exports = {
   alias: {
     common: "./src/common",
     state: "./src/state",
-  }
+  },
 };
