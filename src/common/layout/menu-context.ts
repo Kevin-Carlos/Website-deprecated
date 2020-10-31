@@ -1,4 +1,3 @@
-import type { Visibility } from "common/types";
 import { createContext } from "react";
 
 type MenuContextT = {
