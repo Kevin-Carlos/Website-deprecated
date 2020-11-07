@@ -22,7 +22,7 @@ module.exports = {
   buildOptions: {
     clean: true,
     sourceMaps: true,
-    baseUrl: "./",
+    baseUrl: "/Website",
   },
   proxy: {
     /* ... */
