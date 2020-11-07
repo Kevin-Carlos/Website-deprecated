@@ -1,4 +1,6 @@
 {
+  "name": "kevin-carlos.github.io",
+  "homepage": "https://kevin-carlos.github.io/Website",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",

@@ -14,13 +14,15 @@ module.exports = {
     /* ... */
   ],
   installOptions: {
-    /* ... */
+    treeshake: true,
   },
   devOptions: {
-    /* ... */
+    open: "chrome",
   },
   buildOptions: {
-    // baseUrl: "/Website",
+    clean: true,
+    sourceMaps: true,
+    baseUrl: "/Website",
   },
   proxy: {
     /* ... */
