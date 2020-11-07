@@ -13,7 +13,7 @@ export const CareerBlurb = ({}) => {
   }, "Platform"))), /* @__PURE__ */ React.createElement("p", null, "I help manage and maintain five different frontend applications and my most recent noteworthy project has been developing the views/pages of our now-rebranded site, check it out!"), /* @__PURE__ */ React.createElement("h2", null, "I've also written some blog posts!"), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(BlueLink, {
     href: "https://cycle.io/blog/2020/02/thrown-into-the-fire---learning-containers-as-a-new-college-grad/",
     target: "_blank"
-  }, "Thrown Into the Fire — Learning Containers as a New College Grad")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(BlueLink, {
+  }, "Thrown Into the Fire \u2014 Learning Containers as a New College Grad")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(BlueLink, {
     href: "https://cycle.io/blog/2020/10/a-deep-dive-into-cycles-frontend-stack/",
     target: "_blank"
   }, "A Deep Dive Into Cycle's Frontend Stack"))));
@@ -21,3 +21,4 @@ export const CareerBlurb = ({}) => {
 const BlueLink = styled.a`
   color: ${({theme}) => theme.colors.blue};
 `;
+//# sourceMappingURL=career.js.map

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/layout/menu-context.ts"],
+  "sourcesContent": ["import { createContext } from \"react\";\n\ntype MenuContextT = {\n  hideFooterItems: Visibility;\n  setFooterItemVisibility: (v: Visibility) => void;\n  transparentizeHeaderBG: Visibility;\n  setHeaderBGVisibility: (v: Visibility) => void;\n};\n\nexport const MenuContext = createContext<MenuContextT>({\n  hideFooterItems: \"hide\",\n  setFooterItemVisibility: (v: Visibility) => null,\n  transparentizeHeaderBG: \"show\",\n  setHeaderBGVisibility: (v: Visibility) => null,\n});\n"],
+  "mappings": "AAAA;AASO,aAAM,cAAc,cAA4B;AAAA,EACrD,iBAAiB;AAAA,EACjB,yBAAyB,OAAmB;AAAA,EAC5C,wBAAwB;AAAA,EACxB,uBAAuB,OAAmB;AAAA;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/ui-elements/forms/input.tsx"],
+  "sourcesContent": ["import React, { FC } from \"react\";\nimport styled from \"styled-components\";\nimport { darken } from \"polished\";\n\ntype InputProps = {\n  name: string;\n} & React.InputHTMLAttributes<HTMLInputElement>;\n\nexport const Input: FC<InputProps> = ({\n  name,\n  ...props\n}) => {\n  return (\n    <StyledInput\n      name={name}\n      type=\"text\"\n      {...props}\n    />\n  )\n}\n\nconst StyledInput = styled.input`\n  width: 100%;\n  padding: 1rem;\n  appearance: none;\n  border: 1.7px solid ${({ theme }) => theme.colors.light_gray};\n  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);\n  border-radius: 0.2rem;\n  transition: all 0.25s ease-in-out;\n  &:hover {\n    border-color: ${({ theme }) => darken(0.1, theme.colors.light_gray)};\n    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);\n  }\n  &:focus {\n    outline: none;\n    border-color: ${({ theme }) => theme.colors.blue};\n  }\n`;\n"],
+  "mappings": "AAAA;AACA;AACA;AAMO,aAAM,QAAwB;AAAA,EACnC;AAAA;AAAA;AAGA,SACE,oCAAC,aAAD;AAAA,IACE;AAAA,IACA,MAAK;AAAA,OACD;AAAA;AAAA;AAKV,oBAAoB,OAAO;AAAA;AAAA;AAAA;AAAA,wBAIH,EAAG,WAAY,MAAM,OAAO;AAAA;AAAA;AAAA;AAAA;AAAA,oBAKhC,EAAG,WAAY,OAAO,KAAK,MAAM,OAAO;AAAA;AAAA;AAAA;AAAA;AAAA,oBAKxC,EAAG,WAAY,MAAM,OAAO;AAAA;AAAA;",
+  "names": []
+}

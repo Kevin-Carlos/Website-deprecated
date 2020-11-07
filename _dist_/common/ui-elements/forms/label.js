@@ -21,3 +21,4 @@ const HTMLLabel = styled.label`
   letter-spacing: 0.2rem;
   color: ${({theme}) => theme.colors.light_gray};
 `;
+//# sourceMappingURL=label.js.map

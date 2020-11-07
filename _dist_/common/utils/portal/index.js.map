@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/utils/portal/index.ts"],
+  "sourcesContent": ["export * from \"./portal\";\n"],
+  "mappings": "AAAA;",
+  "names": []
+}

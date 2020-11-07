@@ -21,3 +21,4 @@ const Content = styled(animated.div)`
   width: 100%;
   color: ${({theme}) => theme.colors.white};
 `;
+//# sourceMappingURL=content-blurbs.js.map

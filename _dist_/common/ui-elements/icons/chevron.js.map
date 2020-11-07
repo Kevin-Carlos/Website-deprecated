@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/ui-elements/icons/chevron.ts"],
+  "sourcesContent": ["import styled from \"styled-components\";\nimport { lighten, transparentize } from \"polished\";\n\nconst Chevron = styled.div`\n  display: inline-block;\n  border-right: 0.4rem solid\n    ${({ theme }) => transparentize(0.3, theme.colors.light_teal)};\n  border-bottom: 0.4rem solid ${({ theme }) => theme.colors.light_teal};\n  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);\n  width: 2rem;\n  height: 2rem;\n  cursor: pointer;\n  transition: border 0.25s ease-in-out;\n\n  &:hover {\n    border-right: 0.4rem solid\n      ${({ theme }) => lighten(0.01, theme.colors.light_teal)};\n    border-bottom: 0.4rem solid\n      ${({ theme }) => transparentize(0.3, theme.colors.light_teal)};\n  }\n`;\n\nexport const ChevronLeft = styled(Chevron)`\n  transform: rotate(-225deg);\n`;\n\nexport const ChevronRight = styled(Chevron)`\n  transform: rotate(-45deg);\n`;\n"],
+  "mappings": "AAAA;AACA;AAEA,MAAM,UAAU,OAAO;AAAA;AAAA;AAAA,MAGjB,EAAG,WAAY,eAAe,KAAK,MAAM,OAAO;AAAA,gCACtB,EAAG,WAAY,MAAM,OAAO;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,QASpD,EAAG,WAAY,QAAQ,MAAM,MAAM,OAAO;AAAA;AAAA,QAE1C,EAAG,WAAY,eAAe,KAAK,MAAM,OAAO;AAAA;AAAA;AAIjD,2BAAoB,OAAO;AAAA;AAAA;AAI3B,4BAAqB,OAAO;AAAA;AAAA;",
+  "names": []
+}

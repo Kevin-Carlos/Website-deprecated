@@ -9,7 +9,7 @@ export const hiItems = [
   },
   {
     key: 3,
-    item: "Olá"
+    item: "Ol\xE1"
   },
   {
     key: 4,
@@ -17,7 +17,7 @@ export const hiItems = [
   },
   {
     key: 5,
-    item: "Здравейте"
+    item: "\u0417\u0434\u0440\u0430\u0432\u0435\u0439\u0442\u0435"
   },
   {
     key: 6,
@@ -29,11 +29,11 @@ export const hiItems = [
   },
   {
     key: 8,
-    item: "Halló"
+    item: "Hall\xF3"
   },
   {
     key: 9,
-    item: "مرحبا"
+    item: "\u0645\u0631\u062D\u0628\u0627"
   },
   {
     key: 10,
@@ -45,38 +45,39 @@ export const hiItems = [
   },
   {
     key: 13,
-    item: "こんにちは"
+    item: "\u3053\u3093\u306B\u3061\u306F"
   },
   {
     key: 6,
-    item: "你好"
+    item: "\u4F60\u597D"
   },
   {
     key: 10,
-    item: "Χαίρετε"
+    item: "\u03A7\u03B1\u03AF\u03C1\u03B5\u03C4\u03B5"
   },
   {
     key: 12,
-    item: "שלום"
+    item: "\u05E9\u05DC\u05D5\u05DD"
   },
   {
     key: 13,
-    item: "हैलो"
+    item: "\u0939\u0948\u0932\u094B"
   },
   {
     key: 16,
-    item: "Сайн уу"
+    item: "\u0421\u0430\u0439\u043D \u0443\u0443"
   },
   {
     key: 18,
-    item: "Привет"
+    item: "\u041F\u0440\u0438\u0432\u0435\u0442"
   },
   {
     key: 19,
-    item: "Hallå"
+    item: "Hall\xE5"
   },
   {
     key: 20,
-    item: "xin chào"
+    item: "xin ch\xE0o"
   }
 ];
+//# sourceMappingURL=languages.js.map

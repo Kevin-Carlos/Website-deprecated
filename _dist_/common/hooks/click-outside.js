@@ -11,3 +11,4 @@ export const useClickOutside = (ref, funcHandler) => {
     return () => document.removeEventListener("mousedown", clickHandler);
   }, [ref, funcHandler]);
 };
+//# sourceMappingURL=click-outside.js.map

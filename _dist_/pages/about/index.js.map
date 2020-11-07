@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/pages/about/index.ts"],
+  "sourcesContent": ["export * from \"./about-me\";\n"],
+  "mappings": "AAAA;",
+  "names": []
+}

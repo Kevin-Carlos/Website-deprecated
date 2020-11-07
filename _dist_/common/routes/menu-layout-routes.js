@@ -9,3 +9,4 @@ export const MenuLayoutRoute = ({
     ...props
   }, /* @__PURE__ */ React.createElement(MenuLayout, null, children));
 };
+//# sourceMappingURL=menu-layout-routes.js.map

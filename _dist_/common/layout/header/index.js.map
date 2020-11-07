@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/layout/header/index.ts"],
+  "sourcesContent": ["export * from \"./header\";\n"],
+  "mappings": "AAAA;",
+  "names": []
+}

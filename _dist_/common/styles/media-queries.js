@@ -5,3 +5,4 @@ export const mediaQuery = {
   desktop: `@media screen and (min-width: 1400px)`,
   xl_desktop: `@media screen and (min-width: 2000px)`
 };
+//# sourceMappingURL=media-queries.js.map

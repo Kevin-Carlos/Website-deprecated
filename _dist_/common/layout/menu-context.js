@@ -5,3 +5,4 @@ export const MenuContext = createContext({
   transparentizeHeaderBG: "show",
   setHeaderBGVisibility: (v) => null
 });
+//# sourceMappingURL=menu-context.js.map

@@ -8,3 +8,4 @@ export const colors = {
   light_teal: `rgb(57, 153, 142)`,
   dark_teal: `rgb(43, 77, 89)`
 };
+//# sourceMappingURL=colors.js.map

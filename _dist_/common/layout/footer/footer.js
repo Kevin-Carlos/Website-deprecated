@@ -60,3 +60,4 @@ const Icon = styled.img`
     opacity: 0.7;
   }
 `;
+//# sourceMappingURL=footer.js.map

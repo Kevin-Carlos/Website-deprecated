@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/styles/colors.ts"],
+  "sourcesContent": ["export const colors = {\n  blue: `rgb(16, 158, 201)`,\n  black: `rgb(1, 38, 48)`,\n  white: `rgb(255, 255, 255)`,\n  light_gray: `rgb(189, 189, 189)`,\n  gray: `rgb(99, 102, 107)`,\n  orange: `rgb(230, 155, 28)`,\n  light_teal: `rgb(57, 153, 142)`,\n  dark_teal: `rgb(43, 77, 89)`,\n};\n\nexport type ColorNames = keyof typeof colors;\n"],
+  "mappings": "AAAO,aAAM,SAAS;AAAA,EACpB,MAAM;AAAA,EACN,OAAO;AAAA,EACP,OAAO;AAAA,EACP,YAAY;AAAA,EACZ,MAAM;AAAA,EACN,QAAQ;AAAA,EACR,YAAY;AAAA,EACZ,WAAW;AAAA;",
+  "names": []
+}

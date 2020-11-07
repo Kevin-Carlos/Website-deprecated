@@ -26,3 +26,4 @@ const App = () => {
   }, /* @__PURE__ */ React.createElement(Homepage, null))));
 };
 export default App;
+//# sourceMappingURL=app.js.map

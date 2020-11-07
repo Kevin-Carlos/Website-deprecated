@@ -26,3 +26,4 @@ const ContentWrapper = styled.div`
     width: 140rem;
   }
 `;
+//# sourceMappingURL=section.js.map

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/components/blockquote/index.ts"],
+  "sourcesContent": ["export * from \"./blockquote\";\n"],
+  "mappings": "AAAA;",
+  "names": []
+}

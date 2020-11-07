@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/styles/media-queries.ts"],
+  "sourcesContent": ["export const mediaQuery = {\n  phone: `@media screen and (min-width: 480px)`,\n  tablet: `@media screen and (min-width: 768px)`,\n  laptop: `@media screen and (min-width: 1200px)`,\n  desktop: `@media screen and (min-width: 1400px)`,\n  xl_desktop: `@media screen and (min-width: 2000px)`,\n}"],
+  "mappings": "AAAO,aAAM,aAAa;AAAA,EACxB,OAAO;AAAA,EACP,QAAQ;AAAA,EACR,QAAQ;AAAA,EACR,SAAS;AAAA,EACT,YAAY;AAAA;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/ui-elements/forms/label.tsx"],
+  "sourcesContent": ["import React, { FC } from \"react\";\nimport styled from \"styled-components\";\n\ninterface LabelProps {\n  className?: string;\n  label: string;\n}\n\nexport const Label: FC<LabelProps> = ({ className, label, children }) => {\n  return (\n    <LabelWrapper className={className}>\n      <HTMLLabel style={{ width: \"100%\" }} htmlFor={label}>\n        {label}\n      </HTMLLabel>\n      {children}\n    </LabelWrapper>\n  );\n};\n\nconst LabelWrapper = styled.div`\n  display: flex;\n  flex-direction: column;\n  flex-grow: 1;\n`;\n\nconst HTMLLabel = styled.label`\n  padding-bottom: 1rem;\n  font-weight: 700;\n  font-size: 1.2rem;\n  text-transform: uppercase;\n  letter-spacing: 0.2rem;\n  color: ${({ theme }) => theme.colors.light_gray};\n`;\n"],
+  "mappings": "AAAA;AACA;AAOO,aAAM,QAAwB,EAAG,WAAW,OAAO;AACxD,SACE,oCAAC,cAAD;AAAA,IAAc;AAAA,KACZ,oCAAC,WAAD;AAAA,IAAW,OAAO,CAAE,OAAO;AAAA,IAAU,SAAS;AAAA,KAC3C,QAEF;AAAA;AAKP,qBAAqB,OAAO;AAAA;AAAA;AAAA;AAAA;AAM5B,kBAAkB,OAAO;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,WAMd,EAAG,WAAY,MAAM,OAAO;AAAA;",
+  "names": []
+}

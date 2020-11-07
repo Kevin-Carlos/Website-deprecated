@@ -24,3 +24,4 @@ const Education = styled.div`
   align-items: center;
   height: 100%;
 `;
+//# sourceMappingURL=education.js.map

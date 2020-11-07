@@ -16,3 +16,4 @@ ReactDOM.render(/* @__PURE__ */ React.createElement(RecoilRoot, null, /* @__PURE
 if (import.meta.hot) {
   import.meta.hot.accept();
 }
+//# sourceMappingURL=index.js.map

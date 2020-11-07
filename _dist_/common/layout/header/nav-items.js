@@ -17,3 +17,4 @@ export const menuItems = [
     path: links2.projects().root()
   }
 ];
+//# sourceMappingURL=nav-items.js.map

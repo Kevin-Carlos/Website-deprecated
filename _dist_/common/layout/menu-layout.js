@@ -55,3 +55,4 @@ const GridFooter = styled(Footer)`
   grid-area: footer;
   align-self: end;
 `;
+//# sourceMappingURL=menu-layout.js.map

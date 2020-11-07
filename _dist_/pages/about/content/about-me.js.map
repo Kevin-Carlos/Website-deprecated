@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/pages/about/content/about-me.tsx"],
+  "sourcesContent": ["import { Divider } from \"common/components\";\nimport React from \"react\";\n\nexport const AboutMeBlurb = ({}) => {\n  return (\n    <div>\n      <Divider style={{ marginBottom: \"2rem\" }} />\n      <p>\n        From an early age, I was introduced to Halo by a friend and got hooked\n        into gaming. Like many, I got into Computer Science to build games, but\n        in doing so found a world of much more.\n      </p>\n      <p>\n        Through school, I learned just how vast the realm of CS is and\n        questioned what path I should take. Tesla was becoming more and more\n        popular and I saw what they were doing with Machine Learning and A.I; So\n        I made these my focus. I was drawn towards this path because I wanted to\n        help develop life-changing technologies that impact and shape the world\n        we live in.\n      </p>\n      <p>\n        Near the end of my schooling career, I was afforded an opportunity to\n        become a Frontend Software Engineer and in doing so have found that\n        there are more ways to impact and shape the world than disrupting the\n        automotive industry.\n      </p>\n      <Divider />\n    </div>\n  );\n};\n"],
+  "mappings": "AAAA;AACA;AAEO,aAAM,eAAe;AAC1B,SACE,oCAAC,OAAD,MACE,oCAAC,SAAD;AAAA,IAAS,OAAO,CAAE,cAAc;AAAA,MAChC,oCAAC,KAAD,MAAG,2LAKH,oCAAC,KAAD,MAAG,8WAQH,oCAAC,KAAD,MAAG,yOAMH,oCAAC,SAAD;AAAA;",
+  "names": []
+}

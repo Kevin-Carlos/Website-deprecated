@@ -12,3 +12,4 @@ export const flashcardState = atom({
     }
   ]
 });
+//# sourceMappingURL=flashcards.js.map
