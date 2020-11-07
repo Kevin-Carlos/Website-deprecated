@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/state/flashcards/flashcards.ts"],
+  "sourcesContent": ["import { atom } from \"recoil\";\n\nexport const flashcardState = atom({\n  key: \"website-cards\",\n  default: [\n    {\n      subject: \"What is the most astounding fact about the universe?\",\n      description: \"https://www.youtube.com/watch?v=9D05ej8u-gU\",\n    },\n    {\n      subject: \"What kind of car do you want?\",\n      description: \"A Tesla\",\n    },\n  ]\n});"],
+  "mappings": "AAAA;AAEO,aAAM,iBAAiB,KAAK;AAAA,EACjC,KAAK;AAAA,EACL,SAAS;AAAA,IACP;AAAA,MACE,SAAS;AAAA,MACT,aAAa;AAAA;AAAA,IAEf;AAAA,MACE,SAAS;AAAA,MACT,aAAa;AAAA;AAAA;AAAA;",
+  "names": []
+}

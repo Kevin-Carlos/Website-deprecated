@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/components/divider/divider.ts"],
+  "sourcesContent": ["import { transparentize } from \"polished\";\nimport styled from \"styled-components\";\n\nexport const Divider = styled.div`\n  width: 100%;\n  height: 2px;\n  background: radial-gradient(\n    circle,\n    ${({ theme }) => theme.colors.orange} 0%,\n    ${({ theme }) => transparentize(1, theme.colors.light_gray)} 100%\n  );\n`;\n"],
+  "mappings": "AAAA;AACA;AAEO,aAAM,UAAU,OAAO;AAAA;AAAA;AAAA;AAAA;AAAA,MAKxB,EAAG,WAAY,MAAM,OAAO;AAAA,MAC5B,EAAG,WAAY,eAAe,GAAG,MAAM,OAAO;AAAA;AAAA;",
+  "names": []
+}

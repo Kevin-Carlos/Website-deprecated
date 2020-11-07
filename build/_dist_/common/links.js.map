@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/links.ts"],
+  "sourcesContent": ["export const links = {\n  home: () => `/`,\n  linkedIn: () => `https://www.linkedin.com/in/kevin-carlos/`,\n  stackoverflow: () => `https://stackoverflow.com/users/12329333/kevin-carlos`,\n  github: () => `https://github.com/Kevin-Carlos`,\n  aboutMe: () => `/about`,\n  projects: () => ({\n    root: () => `/projects`,\n    project: () => ({\n      flashcards: () => `/projects/flashcards`,\n    }),\n  })\n}"],
+  "mappings": "AAAO,aAAM,QAAQ;AAAA,EACnB,MAAM,MAAM;AAAA,EACZ,UAAU,MAAM;AAAA,EAChB,eAAe,MAAM;AAAA,EACrB,QAAQ,MAAM;AAAA,EACd,SAAS,MAAM;AAAA,EACf,UAAU,MAAO;AAAA,IACf,MAAM,MAAM;AAAA,IACZ,SAAS,MAAO;AAAA,MACd,YAAY,MAAM;AAAA;AAAA;AAAA;",
+  "names": []
+}

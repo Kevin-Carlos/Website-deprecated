@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/components/blockquote/blockquote.tsx"],
+  "sourcesContent": ["import React, { FC } from \"react\";\nimport styled from \"styled-components\";\nimport { Divider } from \"../divider\";\n\ntype BlockquoteProps = {\n  children: React.ReactNode;\n  className?: string;\n};\n\nexport const Blockquote: FC<BlockquoteProps> = ({ children, className }) => {\n  return (\n    <BlockQuoteWithDivider className={className}>\n      <RotatedDivider />\n      <blockquote>{children}</blockquote>\n    </BlockQuoteWithDivider>\n  );\n};\n\nconst BlockQuoteWithDivider = styled.div`\n  display: grid;\n  grid-template-columns: 2px 1fr;\n  margin-bottom: 2rem;\n`;\n\nconst RotatedDivider = styled(Divider)`\n  width: 2px;\n  height: 100%;\n`;\n"],
+  "mappings": "AAAA;AACA;AACA;AAOO,aAAM,aAAkC,EAAG,UAAU;AAC1D,SACE,oCAAC,uBAAD;AAAA,IAAuB;AAAA,KACrB,oCAAC,gBAAD,OACA,oCAAC,cAAD,MAAa;AAAA;AAKnB,8BAA8B,OAAO;AAAA;AAAA;AAAA;AAAA;AAMrC,uBAAuB,OAAO;AAAA;AAAA;AAAA;",
+  "names": []
+}

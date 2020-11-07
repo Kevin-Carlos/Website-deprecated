@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/layout/header/nav-items.ts"],
+  "sourcesContent": ["import { links } from \"common/links\";\n\ntype NavItems = {\n  name: string;\n  path: string;\n};\n\nexport const menuItems: NavItems[] = [\n  {\n    name: \"LinkedIn\",\n    path: links.linkedIn(),\n  },\n  {\n    name: \"StackOverflow\",\n    path: links.stackoverflow(),\n  },\n  {\n    name: \"Github\",\n    path: links.github(),\n  },\n  {\n    name: \"Projects\",\n    path: links.projects().root(),\n  },\n];\n"],
+  "mappings": "AAAA;AAOO,aAAM,YAAwB;AAAA,EACnC;AAAA,IACE,MAAM;AAAA,IACN,MAAM,OAAM;AAAA;AAAA,EAEd;AAAA,IACE,MAAM;AAAA,IACN,MAAM,OAAM;AAAA;AAAA,EAEd;AAAA,IACE,MAAM;AAAA,IACN,MAAM,OAAM;AAAA;AAAA,EAEd;AAAA,IACE,MAAM;AAAA,IACN,MAAM,OAAM,WAAW;AAAA;AAAA;",
+  "names": []
+}

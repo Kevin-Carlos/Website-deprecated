@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/routes/menu-layout-routes.tsx"],
+  "sourcesContent": ["import React, { FC } from \"react\";\nimport { RouteProps, Route } from \"react-router\";\nimport { MenuLayout } from \"common/layout\";\n\ntype MenuLayoutRouteProps = {} & RouteProps;\n\nexport const MenuLayoutRoute: FC<MenuLayoutRouteProps> = ({\n  children,\n  ...props\n}) => {\n  return (\n    <Route {...props}>\n      <MenuLayout>{children}</MenuLayout>\n    </Route>\n  );\n};\n"],
+  "mappings": "AAAA;AACA;AACA;AAIO,aAAM,kBAA4C;AAAA,EACvD;AAAA;AAAA;AAGA,SACE,oCAAC,OAAD;AAAA,OAAW;AAAA,KACT,oCAAC,YAAD,MAAa;AAAA;",
+  "names": []
+}
