@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/utils/portal/portal.tsx"],
-  "sourcesContent": ["import { FC, useEffect } from \"react\";\nimport { createPortal } from \"react-dom\";\n\ntype PortalProps = {\n  className?: string;\n}\n\nexport const Portal: FC<PortalProps> = ({\n  children,\n  className,\n}) => {\n  const el = document.createElement(\"div\");\n  el.className = className || \"\";\n\n  useEffect(() => {\n    document.body.appendChild(el);\n\n    return () => { document.body.removeChild(el); };\n  }, []);\n\n  return createPortal(children, el);\n}\n"],
-  "mappings": "AAAA;AACA;AAMO,aAAM,SAA0B;AAAA,EACrC;AAAA,EACA;AAAA;AAEA,aAAW,SAAS,cAAc;AAClC,KAAG,YAAY,aAAa;AAE5B,YAAU;AACR,aAAS,KAAK,YAAY;AAE1B,WAAO;AAAQ,eAAS,KAAK,YAAY;AAAA;AAAA,KACxC;AAEH,SAAO,aAAa,UAAU;AAAA;",
-  "names": []
-}

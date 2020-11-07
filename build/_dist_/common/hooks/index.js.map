@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/hooks/index.ts"],
-  "sourcesContent": ["export * from \"./click-outside\";\n"],
-  "mappings": "AAAA;",
-  "names": []
-}

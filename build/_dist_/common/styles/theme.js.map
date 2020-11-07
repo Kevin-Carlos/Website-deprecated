@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/styles/theme.ts"],
-  "sourcesContent": ["import { colors } from \"./colors\";\nimport { mediaQuery } from \"./media-queries\";\nimport { zIndices } from \"./z-index\";\n\nexport const theme = {\n  colors,\n  fontSizes: {\n    small: \"1.2rem\",\n    large: \"2rem\",\n    xl: \"3rem\",\n  },\n  mediaQuery,\n  zIndices,\n};\n"],
-  "mappings": "AAAA;AACA;AACA;AAEO,aAAM,QAAQ;AAAA,EACnB;AAAA,EACA,WAAW;AAAA,IACT,OAAO;AAAA,IACP,OAAO;AAAA,IACP,IAAI;AAAA;AAAA,EAEN;AAAA,EACA;AAAA;",
-  "names": []
-}

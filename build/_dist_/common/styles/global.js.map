@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/styles/global.ts"],
-  "sourcesContent": ["import { createGlobalStyle } from \"styled-components\";\nimport { theme } from \"./theme\";\n\nexport const GlobalStyle = createGlobalStyle`\n  html {\n    font-size: 62.5%; /* To make 1rem === 10px for easy calculation */\n    height: 100%;\n  }\n  body { \n    font-family: 'Quicksand', sans-serif;\n    font-size: 1.7rem;\n    min-height: 100%;\n  }\n  html, body {\n    margin: 0;\n  }\n  #root {\n    min-height: 100vh;\n    height: 100%;\n  }\n  a {\n    text-decoration: none;\n    color: ${theme.colors.white};\n  }\n  ul {\n    line-height: 1.7;\n    margin: 0;\n    padding: 0;\n    margin: 0;\n  }\n  h1, h2, h3, h4, h5, h6 {\n    font-family: 'Poppins', sans-serif;\n    margin: 0 0 2rem 0;\n    color: ${theme.colors.white};\n  }\n  h1 {\n    font-size: 4rem;\n  }\n  h2 {\n    font-size: 3rem;\n  }\n  h3 {\n  }\n  p {\n    margin: 0 0 2rem 0;\n    line-height: 1.5;\n  }\n  blockquote {\n    margin: 0 0 0 3rem;\n  }\n  input, button {\n    font-family: inherit;\n    font-size: inherit;\n  }\n  *, *::after, *::before {\n    box-sizing: border-box;\n  }\n`;\n"],
-  "mappings": "AAAA;AACA;AAEO,aAAM,cAAc;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,aAmBd,OAAM,OAAO;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,aAWb,OAAM,OAAO;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;",
-  "names": []
-}

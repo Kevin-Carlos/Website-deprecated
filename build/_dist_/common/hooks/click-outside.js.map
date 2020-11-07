@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/hooks/click-outside.tsx"],
-  "sourcesContent": ["import React, { useEffect } from \"react\";\n\nexport const useClickOutside = (\n  ref: React.MutableRefObject<any>,\n  funcHandler: Function\n) => {\n  useEffect(() => {\n    const clickHandler = (ev: MouseEvent) => {\n      if (!ref.current || ref.current.contains!(ev.target as any)) {\n        return;\n      }\n\n      funcHandler();\n    }\n\n\n    document.addEventListener(\"mousedown\", clickHandler);\n\n    return () => document.removeEventListener(\"mousedown\", clickHandler);\n  }, [ref, funcHandler])\n};\n"],
-  "mappings": "AAAA;AAEO,aAAM,kBAAkB;AAI7B,YAAU;AACR,yBAAqB;AACnB,UAAI,CAAC,IAAI,WAAW,IAAI,QAAQ,SAAU,GAAG;AAC3C;AAAA;AAGF;AAAA;AAIF,aAAS,iBAAiB,aAAa;AAEvC,WAAO,MAAM,SAAS,oBAAoB,aAAa;AAAA,KACtD,CAAC,KAAK;AAAA;",
-  "names": []
-}

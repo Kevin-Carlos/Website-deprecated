@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/ui-elements/buttons/index.ts"],
-  "sourcesContent": ["export * from \"./link-button\";\n"],
-  "mappings": "AAAA;",
-  "names": []
-}

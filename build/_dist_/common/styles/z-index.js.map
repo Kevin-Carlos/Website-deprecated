@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/styles/z-index.ts"],
-  "sourcesContent": ["/**\n * @params underlay 5\n * @params standard 10\n * @params header 15\n * @params overlay 10000\n */\nexport const zIndices = {\n  /** 5 */\n  underlay: 5,\n  /** 10 */\n  standard: 10,\n  /** 15 */\n  header: 15,\n  /** 10000 */\n  overlay: 10000,\n};\n"],
-  "mappings": "AAMO,aAAM,WAAW;AAAA,EAEtB,UAAU;AAAA,EAEV,UAAU;AAAA,EAEV,QAAQ;AAAA,EAER,SAAS;AAAA;",
-  "names": []
-}

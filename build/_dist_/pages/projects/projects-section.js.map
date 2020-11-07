@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/pages/projects/projects-section.tsx"],
-  "sourcesContent": ["import React, { FC } from \"react\";\nimport { Switch, Route } from \"react-router-dom\";\nimport { links } from \"common/links\";\nimport { ProjectDashboard } from \"./dashboard\";\nimport { Flashcards } from \"./flashcards\";\n\ntype ProjectsSectionProps = {};\n\nexport const ProjectsSection: FC<ProjectsSectionProps> = () => {\n  return (\n    <Switch>\n\n      <Route\n        path={links.projects().project().flashcards()}\n      >\n        <Flashcards />\n      </Route>\n\n      <Route\n        exact\n        path={links.projects().root()}\n      >\n        <ProjectDashboard />\n      </Route>\n\n    </Switch>\n  )\n}"],
-  "mappings": "AAAA;AACA;AACA;AACA;AACA;AAIO,aAAM,kBAA4C;AACvD,SACE,oCAAC,QAAD,MAEE,oCAAC,OAAD;AAAA,IACE,MAAM,OAAM,WAAW,UAAU;AAAA,KAEjC,oCAAC,YAAD,QAGF,oCAAC,OAAD;AAAA,IACE,OAAK;AAAA,IACL,MAAM,OAAM,WAAW;AAAA,KAEvB,oCAAC,kBAAD;AAAA;",
-  "names": []
-}

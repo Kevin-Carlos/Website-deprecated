@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/common/sections/section.tsx"],
-  "sourcesContent": ["import React, { FC } from \"react\";\nimport styled from \"styled-components\";\n\ntype SectionProps = {\n  className?: string;\n  isFirst?: boolean;\n};\n\nexport const Section: FC<SectionProps> = ({ className, children, isFirst }) => {\n  return (\n    <StyledSection\n      className={className}\n      style={isFirst ? { paddingTop: \"4rem\" } : undefined}\n    >\n      <ContentWrapper>{children}</ContentWrapper>\n    </StyledSection>\n  );\n};\n\nconst StyledSection = styled.section`\n  position: relative;\n  z-index: ${({ theme }) => theme.zIndices.standard};\n`;\n\nconst ContentWrapper = styled.div`\n  width: 100%;\n  height: 100%;\n  padding: 0 2rem;\n  margin: 0 auto 4rem;\n\n  ${({ theme }) => theme.mediaQuery.desktop} {\n    width: 120rem;\n    margin: 0 auto 8rem;\n    padding: 0;\n  }\n\n  ${({ theme }) => theme.mediaQuery.xl_desktop} {\n    width: 140rem;\n  }\n`;\n"],
-  "mappings": "AAAA;AACA;AAOO,aAAM,UAA4B,EAAG,WAAW,UAAU;AAC/D,SACE,oCAAC,eAAD;AAAA,IACE;AAAA,IACA,OAAO,UAAU,CAAE,YAAY,UAAW;AAAA,KAE1C,oCAAC,gBAAD,MAAiB;AAAA;AAKvB,sBAAsB,OAAO;AAAA;AAAA,aAEhB,EAAG,WAAY,MAAM,SAAS;AAAA;AAG3C,uBAAuB,OAAO;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IAM1B,EAAG,WAAY,MAAM,WAAW;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IAMhC,EAAG,WAAY,MAAM,WAAW;AAAA;AAAA;AAAA;",
-  "names": []
-}

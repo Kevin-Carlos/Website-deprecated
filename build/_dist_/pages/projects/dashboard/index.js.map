@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/pages/projects/dashboard/index.ts"],
-  "sourcesContent": ["export * from \"./project-dashboard\";\n"],
-  "mappings": "AAAA;",
-  "names": []
-}

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/pages/projects/dashboard/project-items.tsx"],
-  "sourcesContent": ["import React from \"react\";\nimport { links } from \"common/links\";\n\ninterface Items {\n  name: string;\n  description: React.ReactChild;\n  path: string;\n};\n\nexport const projectItems: Items[] = [\n  {\n    name: \"Flashcards\",\n    description:\n      <p>\n        This project was built to demonstrate my ability to quickly learn a MERN stack and Redux.\n        The original can be seen on{\" \"}\n        <a href=\"https://github.com/Kevin-Carlos/ReactFlashcards\">\n          GitHub\n        </a>.{\" \"}\n        This is a local version tied into recoil (a state management library).\n      </p>,\n    path: links.projects().project().flashcards()\n  }\n];"],
-  "mappings": "AAAA;AACA;AAMC;AAEM,aAAM,eAAwB;AAAA,EACnC;AAAA,IACE,MAAM;AAAA,IACN,aACE,oCAAC,KAAD,MAAG,yHAE2B,KAC5B,oCAAC,KAAD;AAAA,MAAG,MAAK;AAAA,OAAkD,WAEtD,KAAE,KAAI;AAAA,IAGd,MAAM,OAAM,WAAW,UAAU;AAAA;AAAA;",
-  "names": []
-}

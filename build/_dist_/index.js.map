@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["/Users/kevin/Documents/Projects/snowpack-site/src/index.tsx"],
-  "sourcesContent": ["import React from \"react\";\nimport ReactDOM from \"react-dom\";\n\n// Stylization\nimport \"normalize.css\";\nimport { theme } from \"common/styles\";\nimport { GlobalStyle } from \"common/styles/global\";\nimport { ThemeProvider } from \"styled-components\";\n\n// Core application\nimport { RecoilRoot } from \"recoil\";\nimport { App } from \"./pages\";\nimport { BrowserRouter } from \"react-router-dom\";\n\nReactDOM.render(\n  <RecoilRoot>\n    <ThemeProvider theme={theme}>\n      <GlobalStyle />\n      <BrowserRouter>\n        <App />\n      </BrowserRouter>\n    </ThemeProvider>\n  </RecoilRoot>,\n  document.getElementById(\"root\"),\n);\n\n// Hot Module Replacement (HMR) - Remove this snippet to remove HMR.\n// Learn more: https://www.snowpack.dev/#hot-module-replacement\nif (import.meta.hot) {\n  import.meta.hot.accept();\n}\n"],
-  "mappings": "AAAA;AACA;AAGA;AACA;AACA;AACA;AAGA;AACA;AACA;AAEA,SAAS,OACP,oCAAC,YAAD,MACE,oCAAC,eAAD;AAAA,EAAe;AAAA,GACb,oCAAC,aAAD,OACA,oCAAC,eAAD,MACE,oCAAC,KAAD,UAIN,SAAS,eAAe;AAK1B,IAAI,YAAY;AACd,cAAY,IAAI;AAAA;",
-  "names": []
-}
